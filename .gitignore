@@ -11,11 +11,7 @@ yarn-error.log
 .vscode/
 .idea/
 
-# Ignore compiled CSS files
-*.css
 
-# Ignore compiled HTML files
-*.html
 
 # Ignore log files
 *.log
