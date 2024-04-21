@@ -11,21 +11,21 @@ Short description of the project.
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/your-username/your-repo.git
-    ```
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   ```
 
 2. Install dependencies:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 3. Start the development server:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 4. Open your browser and visit `http://localhost:3000` to see the app.
 
@@ -51,4 +51,4 @@ Give credit to any resources or individuals that have inspired or helped you in 
 
 ## Contact
 
-Provide your contact information or ways for others to reach out to you.
+Provide your contact information or ways for others to reach out to you...
