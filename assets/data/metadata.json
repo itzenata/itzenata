@@ -5,6 +5,14 @@
       "keywords": "IT, technology, software, development, DevOps, backend, frontend",
       "author": "IT Zenata Team"
     },
+    "header": {
+      "logo": "IT <span>ZENATA</span>",
+      "links": [
+        { "href": "#home", "text": "Home", "active": true },
+        { "href": "#services", "text": "Services" },
+        { "href": "#projects", "text": "Projects" }
+      ]
+    },
     "home": {
       "heading": "Bonjour, on est IT ZENATA",
       "subheading": "On est innovateurs en technologie",
@@ -12,30 +20,30 @@
     },
     "services": [
       {
-        "image": "assets/devops.png",
+        "image": "assets/services/devops.png",
         "title": "DevOps",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicien..."
       },
       {
-        "image": "assets/backend.png",
+        "image": "assets/services/backend.png",
         "title": "Development Backend",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicien..."
       },
       {
-        "image": "assets/front.png",
+        "image": "assets/services/front.png",
         "title": "Development Frontend",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicien..."
       }
     ],
     "projects": [
       {
-        "image": "assets/coindesreducs.png"
+        "image": "assets/projects/coindesreducs.png"
       },
       {
-        "image": "assets/momunity.png"
+        "image": "assets/projects/momunity.png"
       },
       {
-        "image": "assets/kplay.png"
+        "image": "assets/projects/kplay.png"
       }
     ]
   }

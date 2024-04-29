@@ -1,7 +1,8 @@
+
+
 let menuIcon = document.querySelector('#menu-icon');
 let naBar = document.querySelector('.navbar');
 let navLinks = document.querySelector('header nav a');
-
 
 
 menuIcon.onclick = () => {
