@@ -266,6 +266,8 @@ span {
 .service {
     display: flex;
     flex-direction: column;
+    height: auto;
+    width: 100%;
 
 }
 .service-title {
@@ -331,12 +333,14 @@ span {
 /* Section services*/
 
 
-.client {
+.projet {
     display: flex;
     flex-direction: column;
+    height: auto;
+    width: 100%;
 
 }
-.client-title {
+.projet-title {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
@@ -344,42 +348,49 @@ span {
     color: var(--primary-color);
 }
 
-.client-container {
+.projet-container {
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    gap: 2rem;
 }
-.client-box {
+.projet-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--bg-secondary-color);
-    gap: 5rem;
+    gap: 2rem;
     max-width: 300px;
     text-align: center;
     border: 5px solid var(--bg-secondary-color);
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 10%;
 }
 
-.client-box:hover {
+.projet-box:hover {
     border: 5px solid var(--primary-color);
     box-shadow: 0 0 25px var(--primary-color);
 }
 
-.client-box h1 {
+.projet-box h1 {
     font-size: 2.5rem;
     font-weight: 700;
 }
-.client-box i {
+.projet-box i {
     font-size: 4rem;
     color: var(--primary-color);
 }
-.client-box p {
+.projet-box p {
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.5;
+}
+
+.projet-box img {
+    border-radius: 1rem;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
 }
 
 /* Section footer*/
