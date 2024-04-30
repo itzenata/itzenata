@@ -10,3 +10,4 @@ menuIcon.onclick = () => {
     naBar.classList.toggle('active');
     console.log(naBar.style);
 }
+
