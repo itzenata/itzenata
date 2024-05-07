@@ -14,7 +14,7 @@
 :root {
     --bg-primary-color: #080808;
     --bg-secondary-color: #131313;
-    --primary-color: #38A3A5;
+    --primary-color: #258F95;
     --text-color: white;
 }
 
@@ -47,21 +47,12 @@ body {
     z-index: 5;
 }
 
-.logo {
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 800;
+.header img {
+    width: 5vw;
     cursor: pointer;
-    transition: 0.3s ease;
 }
 
-.logo:hover {
-    transform: scale(1.1);
-}
 
-.logo span {
-    text-shadow: 0 0 5px var(--primary-color);
-}
 
 .navbar a {
     font-size: 1.8rem;
@@ -222,6 +213,12 @@ span {
     #menu-icon {
         display: block;
     }
+
+    .header img {
+        width: 20vw;
+        cursor: pointer;
+    }
+    
     .navbar {
         position: absolute;
         top: 100%;
