@@ -45,6 +45,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 5;
+    height: 100px;
 }
 
 .header img {
@@ -77,8 +78,9 @@ body {
 }
 
 section {
-    min-height: 100vh;
+    height: 100vh;
     padding: 10rem 12% 10rem;
+    padding-top: 100px;
 
 }
 
@@ -214,8 +216,12 @@ span {
         display: block;
     }
 
+    .header  {
+        height: 10vh;
+    }
+
     .header img {
-        width: 20vw;
+        width: 8vw;
         cursor: pointer;
     }
     
@@ -241,6 +247,7 @@ span {
         margin: 3rem 0;
         color: white ;
     }
+
     .home{
         flex-direction: column-reverse;
         margin: 5rem 3rem;
