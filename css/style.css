@@ -313,7 +313,6 @@ span {
     justify-content: center;
     background-color: var(--bg-secondary-color);
     gap: 2rem;
-    max-width: 300px;
 
     text-align: center;
     border: 5px solid var(--bg-secondary-color);
@@ -342,8 +341,9 @@ span {
 
 .projet-box img {
     border-radius: 1rem;
-    max-width: 250px;
-    height: 250px;
+    height: 40rem;
+    width: 40rem;
+    max-width: fit-content;
     object-fit: cover;
 }
 
@@ -478,11 +478,9 @@ span {
         font-size: 2.6rem;
     }
     .home-container h1{
-        font-size: 8rem;
+        font-size: 6rem;
     }
-    .home-container p{
-        max-width: 600px;
-    }
+    
  
     .home-img {
         flex: 1;
@@ -556,7 +554,6 @@ span {
 
     .projet-title {
         font-size: 3rem;
-        padding-top: 90px;
     }
 
     .projet-container {
@@ -570,7 +567,7 @@ span {
   
 
     .projet-box img {
-        height: 200px;
+        height: 40rem;
     }
 
     .projet-box h1 {
