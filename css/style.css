@@ -482,7 +482,6 @@ span {
     }
     .home-container p{
         max-width: 600px;
-        margin: 0 auto;
     }
  
     .home-img {
@@ -561,7 +560,7 @@ span {
     }
 
     .projet-container {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         gap: 2rem;
 
