@@ -93,13 +93,21 @@ section {
 
 .home-container {
     display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding-top: 15vh;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+
+.home-content {
+    display: flex;
     flex-direction: column;
     align-items: baseline;
     text-align: left;
     justify-content: center;
-    padding-top: 15vh;
-
-
 }
 
 span {
@@ -110,13 +118,13 @@ span {
     color: var(--primary-color);
 }
 
-.home-container h3 {
+.home-content h3 {
     margin-bottom: 2rem;
     margin-top: 1rem;
     font-size: 3.5rem;
 }
 
-.home-container h1 {
+.home-content h1 {
     font-size: 7rem;
     font-weight: 700;
     margin-top: 1.5rem;
@@ -468,16 +476,24 @@ span {
 
     }
     .home-container {
-        flex: 1;
-        padding-top: 20vh;
 
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            justify-content: center;
+            padding-top: 15vh;
+            gap: 1rem;
+            padding: 1rem;
+        
 
 
     }
-    .home-container h3{
+
+
+    .home-content h3{
         font-size: 2.6rem;
     }
-    .home-container h1{
+    .home-content h1{
         font-size: 6rem;
     }
     
