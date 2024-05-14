@@ -80,7 +80,6 @@ body {
 section {
     height: 100vh;
     padding: 10rem 12% 10rem;
-    padding-top: 100px;
 
 }
 
@@ -98,7 +97,7 @@ section {
     align-items: baseline;
     text-align: left;
     justify-content: center;
-    margin-top: 3rem;
+    padding-top: 15vh;
 
 
 }
@@ -466,11 +465,12 @@ span {
         display: flex;
         flex-direction: column-reverse;
         height: 100vh;
-        padding-top: 17vh;
 
     }
     .home-container {
         flex: 1;
+        padding-top: 20vh;
+
 
 
     }
