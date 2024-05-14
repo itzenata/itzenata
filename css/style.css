@@ -110,13 +110,9 @@ section {
     justify-content: center;
 }
 
-span {
-    color: var(--primary-color);
-}
 
-.logo span {
-    color: var(--primary-color);
-}
+
+
 
 .home-content h3 {
     margin-bottom: 2rem;
@@ -404,8 +400,8 @@ span {
     cursor: pointer;
 }
 
-.footer-logo span {
-    color: var(--primary-color);
+.footer-logo a {
+    color: white;
 }
 
 .footer-social a {
