@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Title | IT ZENATA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html#accueil" class="logo">
+            <img src="assets/images/itzenata-txt-XL.png" alt="IT ZENATA Logo" />
+        </a>
+        <nav class="navbar">
+            <a href="index.html#accueil">Accueil</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#projets">Projets</a>
+            <a href="index.html#blogs">Blogs</a>
+        </nav>
+    </header>
+
+    <section class="blog-detail" id="blog-detail">
+        <div class="blog-detail-container">
+            <h1 class="blog-title" id="blog-title"></h1>
+            <p class="blog-content" id="blog-content"></p>
+        </div>
+    </section>
+
+    <script>
+        // Tableau contenant les titres et le contenu de chaque blog
+        const blogs = {
+            "devops": {
+                title: "DevOps",
+                content: "Le DevOps est une approche qui combine le développement logiciel (Dev) et les opérations informatiques (Ops). C’est un ensemble de pratiques qui visent à automatiser et à intégrer les processus entre les équipes de développement et les équipes d’exploitation. Le DevOps est né de la nécessité d'une meilleure collaboration entre les développeurs et les administrateurs système pour permettre des cycles de développement plus rapides et des déploiements plus fiables. ..." +
+                         "Les avantages de DevOps sont nombreux : amélioration de la fréquence des déploiements, réduction des échecs de mise en production, et bien plus encore. En adoptant cette culture, les entreprises peuvent optimiser leurs performances et améliorer la satisfaction de leurs clients. ..." +
+                         "De plus, les outils DevOps, tels que Jenkins, Kubernetes, Docker, Ansible, permettent d’automatiser la gestion des infrastructures, la livraison continue (CI/CD), et le monitoring, rendant le processus de développement beaucoup plus fluide et réactif aux besoins de l'entreprise. ..." +
+                         "(Etc. - Continuez avec un paragraphe de 2000 mots)"
+            },
+            "backend": {
+                title: "Backend",
+                content: "Le développement backend est la partie d'une application qui gère la logique métier, les bases de données, et les serveurs. Contrairement au développement frontend, qui se concentre sur l'interface utilisateur, le backend s'occupe du bon fonctionnement de l'application dans les coulisses. Les développeurs backend travaillent avec des langages comme Node.js, Python, Ruby, et PHP pour créer des applications robustes et scalables. ..." +
+                         "Le backend est essentiel pour la gestion des données et la sécurité des informations. Un bon système backend permet de garantir que les utilisateurs peuvent interagir avec l'application en toute fluidité, que les transactions sont sécurisées, et que les données sont stockées de manière efficace. ..." +
+                         "(Etc. - Continuez avec un paragraphe de 2000 mots)"
+            },
+            "frontend": {
+                title: "Frontend",
+                content: "Le développement frontend concerne la création d’interfaces utilisateur interactives et visuellement attrayantes. Cela inclut le développement de la structure des pages web avec HTML, la mise en style avec CSS, et la gestion des interactions avec JavaScript. Les développeurs frontend travaillent pour s'assurer que les sites web sont accessibles, rapides, et réactifs sur différents types de dispositifs, comme les ordinateurs de bureau et les téléphones mobiles. ..." +
+                         "L'évolution des technologies frontend, comme React, Vue.js et Angular, a permis de créer des applications web plus performantes et réactives. Ces technologies permettent une expérience utilisateur fluide en minimisant les chargements et en offrant des interfaces dynamiques. ..." +
+                         "(Etc. - Continuez avec un paragraphe de 2000 mots)"
+            }
+        };
+
+        // Récupérer l'ID du blog depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get('id');
+
+        // Vérifier si l'ID du blog existe dans le tableau des blogs
+        if (blogs[blogId]) {
+            // Mettre à jour le titre et le contenu du blog
+            const blog = blogs[blogId];
+            document.title = blog.title + " | IT ZENATA";
+            document.getElementById('blog-title').innerText = blog.title;
+            document.getElementById('blog-content').innerText = blog.content;
+        } else {
+            // Gérer les cas où l'ID n'existe pas (page de blog par défaut)
+            document.getElementById('blog-title').innerText = "Blog non trouvé";
+            document.getElementById('blog-content').innerText = "Le blog que vous avez sélectionné n'existe pas.";
+        }
+    </script>
+
+</body>
+
+</html>
