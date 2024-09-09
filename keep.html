@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 
 <head>
   <meta charset="UTF-8" />
@@ -10,12 +10,22 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <a href="#accueil" class="logo">
+      <img src="assets/images/itzenata-txt-XL.png"/>
+    </a>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#projets">Projets</a>
+      <a href="#blogs">Blogs</a>
+    </nav>
+  </header>
   <section class="home" id="accueil">
     <div class="home-container">
       <div class="home-content">
@@ -87,47 +97,39 @@
     </div>
   </section>
  
+
   <section class="blog" id="blogs">
     <h1 class="blog-title">Nos Blogs</h1>
-  
-    <!-- Slider Wrapper -->
-    <div class="swiper blog-slider">
-      
-      <!-- Arrow Navigation -->
-      <div class="arrow arrow-prev disabled">‹</div> <!-- Left Arrow -->
-      
-      <div class="swiper-wrapper blog-container">
-        <!-- Blog Items -->
-        <div class="swiper-slide blog-box">
-          <a href="blog-detail.html?id=devops">
-            <img src="./assets/images/blogs images/devOps.jpg" alt="DevOps" />
-            <h1>DevOps</h1>
-            <p>Explore DevOps practices and tools for faster deployment and enhanced collaboration.</p>
-          </a>
+    <div class="blog-container">
+        <div class="blog-box">
+            
+             <a href="blog-detail.html?id=devops">
+                <img src="./assets/images/blogs images/devOps.jpg" alt="DevOps" />
+                <h1 style="color: white;">DevOps</h1>
+                <p style="color: white;">Plongez dans nos articles sur le développement backend et explorez les fondements des applications modernes. Découvrez les technologies essentielles, les bonnes pratiques, et apprenez à créer des systèmes robustes, sécurisés et évolutifs.</p>
+            </a>
         </div>
-        <div class="swiper-slide blog-box">
-          <a href="blog-detail.html?id=backend">
-            <img src="./assets/images/blogs images/Backend.jfif" alt="Backend" />
-            <h1>Backend Development</h1>
-            <p>Learn about building scalable, secure, and robust backend systems.</p>
-          </a>
+        <div class="blog-box">
+            <a href="blog-detail.html?id=backend">
+                <img src="./assets/images/blogs images/Backend.jfif" alt="BackEnd" />
+                <h1 style="color: white;">BackEnd</h1>
+                <p style="color: white;">Explorez nos études de cas et découvrez nos innovations en matière de backend. Plongez dans des solutions concrètes qui montrent comment nous avons construit des systèmes robustes et évolutifs, en utilisant les meilleures pratiques et technologies actuelles.</p>
+            </a>
         </div>
-        <div class="swiper-slide blog-box">
+        <div class="blog-box">
           <a href="blog-detail.html?id=frontend">
-            <img src="./assets/images/blogs images/frontEnd.jpg" alt="FrontEnd" />
-            <h1 style="color: white;">FrontEnd</h1>
-            <p style="color: white;">Explorez nos études de cas et découvrez nos innovations en matière de frontend.</p>
-          </a>
+                <img src="./assets/images/blogs images/frontEnd.jpg" alt="FrontEnd" />
+                <h1 style="color: white;">FrontEnd</h1>
+                <p style="color: white;">Explorez nos études de cas et découvrez nos innovations en matière de frontend. Plongez dans des exemples concrets qui illustrent comment nous avons créé des interfaces utilisateur intuitives et performantes, en utilisant les dernières technologies et méthodologies.</p>
+            </a>
         </div>
-        <!-- More blog items... -->
-      </div>
-      
-      <div class="arrow arrow-next">›</div> <!-- Right Arrow -->
     </div>
-  </section>
-  
-  
-  <!-- Footer -->
+    
+</section>
+
+
+
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-logo">
@@ -159,9 +161,8 @@
 
     </div>
   </footer>
-
-  <script src="./js/main.js"></script>
-
 </body>
+
+<script src="js/main.js"></script>
 
 </html>

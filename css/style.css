@@ -861,5 +861,90 @@ section {
         font-size: 1.4rem;
     }
 }
+/* Blog Section */
+.blog-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .blog-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+  }
+  
+  .blog-box {
+    min-width: 300px;
+    flex-shrink: 0;
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .blog-box img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .blog-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  .blog-container.dragging {
+    cursor: grabbing;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    user-select: none;
+  }
+  
+  .arrow-prev {
+    left: 10px;
+  }
+  
+  .arrow-next {
+    right: 10px;
+  }
+  
+  .arrow.disabled {
+    display: none;
+  }
+  
+  /* Optional: Style feedback when dragging */
+  .blog-container.dragging {
+    cursor: grabbing;
+  }
+  
 
 
