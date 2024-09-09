@@ -414,7 +414,7 @@ section {
     width: 100%;
 }
 
-.blog-title {
+.blog-main-title {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
@@ -861,90 +861,374 @@ section {
         font-size: 1.4rem;
     }
 }
-/* Blog Section */
-.blog-slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .blog-container {
+.blog-detail-content {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px;
-  }
-  
-  .blog-box {
-    min-width: 300px;
-    flex-shrink: 0;
-    background-color: #1c1c1c;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blog-detail-container {
+    width: 70%;
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    color: #258F95;
+    margin-bottom: 20px;
+}
+
+.blog-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
     color: white;
+}
+
+/* Search bar */
+.search-container {
+    margin-top: 30px;
+    
+    
+    display: flex;
+    justify-content: flex-start;
+}
+
+#search-bar {
+    margin-left: 40px;
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #258F95;
+    color: white;
+    outline: none;
+}
+
+#search-bar::placeholder {
+    color: #888;
+}
+
+#search-bar:focus {
+    border: 2px solid #258F95;
+}
+
+/* Related Blogs (Sidebar) */
+.related-blogs {
+    width: 25%;
+    background-color: #131313;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.related-blogs h2 {
+    font-size: 1.8rem;
+    color: #258F95;
+    margin-bottom: 20px;
+}
+
+.related-blogs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-card {
+    background-color: #080808;
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
-  }
-  
-  .blog-box img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.blog-card img {
     width: 100%;
-    border-radius: 5px;
-  }
-  
-  .blog-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    font-size: 1.4rem;
+    color: #258F95;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.blog-card .read-more {
+    text-decoration: none;
+    color: #258F95;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.blog-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-detail-content {
+        flex-direction: column;
+    }
+
+    .blog-detail-container, .related-blogs {
+        width: 100%;
+    }
+
+    .related-blogs {
+        margin-top: 30px;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+}
+
+
+/* Blog Detail Content Layout */
+.blog-detail-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px; /* Add gap between blog content and sidebar */
+}
+
+/* Blog Detail Container */
+.blog-detail-container {
+    width: 75%;
+    border: 0.5px solid #258F95 ;
+    border-collapse: collapse;
+    background-color:#131313 ; /* Darker background for contrast */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Blog Title Styling */
+/* Blog Title Styling */
+.blog-title {
+    font-size: 3rem;
     color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left; /* Align the text to the right */
+    margin-bottom: 30px;
+    box-shadow: none; /* Remove the shadow if you want a clean look */
+    background: none; /* Remove the background color */
+}
+
+
+/* Blog Content Styling */
+.blog-content {
+   margin: 3%;
+    width: 95%;
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: white;
+    background-color: #131313;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+
+
+/* Related Blogs (Sidebar) */
+.related-blogs {
+    width: 25%;
+    background-color: #131313;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.related-blogs h2 {
+    font-size: 1.8rem;
+    color: #258F95;
+    margin-bottom: 20px;
+}
+
+.related-blogs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    background-color: #080808;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.blog-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    font-size: 1.4rem;
+    color: #258F95;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.blog-card .read-more {
+    text-decoration: none;
+    color: #258F95;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.blog-card .read-more:hover {
+    text-decoration: underline;
+}
+.blog-image{
+    width: 50%;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .blog-detail-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .blog-detail-container, .related-blogs {
+        width: 100%;
+    }
+
+    .related-blogs {
+        margin-top: 30px;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .blog-title {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    .blog-content {
+        
+        font-size: 2rem;
+        padding: 100px; /* Reduce padding for better layout */
+        line-height: 1.5; /* Adjust line height for readability */
+    }
+    
+    .blog-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .blog-card p {
+        font-size: 0.85rem;
+    }
+}
+/* Blog Wrapper - Horizontal scroll container */
+.blog-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.blog-wrapper::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, and Opera */
+}
+
+.blog-container {
+    display: flex;
+    gap: 50px;
+    width: fit-content; /* Ensures container is wide enough for all blog boxes */
+}
+
+.blog-box {
+    flex: 1 1 calc(33.33% - 20px); /* Show 3 blog boxes, subtract the gap */
+    min-width: 300px; /* Ensures the boxes won't shrink below this size */
+    flex-shrink: 0;
+}
+.discover-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 8px;
     border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  button.prev {
-    left: 10px;
-  }
-  
-  button.next {
-    right: 10px;
-  }
-  .blog-container.dragging {
-    cursor: grabbing;
-  }
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100;
-    user-select: none;
-  }
-  
-  .arrow-prev {
-    left: 10px;
-  }
-  
-  .arrow-next {
-    right: 10px;
-  }
-  
-  .arrow.disabled {
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.discover-bar::-webkit-scrollbar {
     display: none;
-  }
-  
-  /* Optional: Style feedback when dragging */
-  .blog-container.dragging {
-    cursor: grabbing;
-  }
-  
+}
 
+.collections-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
 
+.collection-item {
+    margin: 0 7px;
+    padding: 10px 20px;
+    border: 1px solid #258F95;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.collection-item:hover {
+    background-color: #258F95;
+}
+
+.scroll-btn {
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.scroll-btn.left {
+    margin-right: 10px;
+    display: none;
+}
+
+.scroll-btn.right {
+    margin-left: 10px;
+    display: none;
+}
