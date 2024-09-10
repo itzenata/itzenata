@@ -10,7 +10,7 @@ function shuffle(array) {
 
 // Load collection buttons
 function loadCollections(blogs) {
-  const collections = ["dev", "politics", "lifestyle", "sports", "autre"];
+  const collections = ["dev", "politics", "lifestyle", "sports", "design" , "autre"];
   const container = document.getElementById('collections-container');
   container.innerHTML = ''; // Clear existing content
 
@@ -37,6 +37,10 @@ function displayBlog(blog, blogId, collection, blogs) {
   document.title = blog.title + " | IT ZENATA";
   document.getElementById('blog-title').innerText = blog.title;
   document.getElementById('blog-content').innerText = blog.content;
+
+  // Ajout de l'injection de la date d'écriture
+  document.getElementById('blog-date').innerText = "Date d'écriture : " + blog.dateEcriture;
+
   loadRelatedBlogs(blogId, collection, blogs);
 }
 
@@ -218,3 +222,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }).join('');
   }
 });
+

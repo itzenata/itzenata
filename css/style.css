@@ -1020,7 +1020,6 @@ section {
 }
 
 /* Blog Title Styling */
-/* Blog Title Styling */
 .blog-title {
     font-size: 3rem;
     color: white;
@@ -1031,6 +1030,16 @@ section {
     box-shadow: none; /* Remove the shadow if you want a clean look */
     background: none; /* Remove the background color */
 }
+
+/* Blog date Styling */
+.blog-date {
+    text-align: center;
+    font-style: italic;
+    color: white;
+    font-size: 1.7em !important; /* Ajuste la taille selon tes besoins */
+  
+  }
+  
 
 
 /* Blog Content Styling */
