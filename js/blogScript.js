@@ -10,7 +10,7 @@ function shuffle(array) {
 
 // Load collection buttons
 function loadCollections(blogs) {
-  const collections = ["dev", "politics", "travel", "food", "writing"];
+  const collections = ["dev", "politics", "lifestyle", "sports", "autre"];
   const container = document.getElementById('collections-container');
   container.innerHTML = ''; // Clear existing content
 
@@ -118,4 +118,106 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     })
     .catch(error => console.error('Error loading blog data:', error));
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const blogId = new URLSearchParams(window.location.search).get('id');
+  if (blogId) {
+      loadBlog(blogId);
+  }
+
+  function loadBlog(blogId) {
+      fetch('data/blogsData.json')
+          .then(response => response.json())
+          .then(data => {
+              const blog = data[blogId];
+              if (blog) {
+                  document.title = blog.title + " | IT ZENATA";
+                  document.getElementById('blog-title').innerText = blog.title;
+                  document.getElementById('blog-content').innerHTML = formatContentWithImages(blog.content, blog.injectedImages || []);
+                  loadRelatedBlogs(blogId, blog.collection);
+              } else {
+                  
+              }
+          })
+          .catch(error => console.error('Error loading blog data:', error));
+  }
+
+  function formatContentWithImages(content, injectedImages) {
+      const lines = content.split('\n');
+      return lines.map((line, index) => {
+          const img = injectedImages.find(img => img.line === index + 1);
+          let html = `<p>${line}</p>`;
+          if (img) {
+              html += `<img src="${img.src}" class="injected-image ${img.position}" alt="Image at line ${index + 1}">`;
+          }
+          return html;
+      }).join('');
+  }
+
+  function loadRelatedBlogs(currentBlogId, collection) {
+      // Existing code to load related blogs
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const blogId = urlParams.get('id');
+  
+  if (blogId) {
+      loadBlog(blogId);
+  }
+
+  async function fetchBlogData() {
+      try {
+          const response = await fetch('path/to/blogsData.json');
+          return await response.json();
+      } catch (error) {
+          console.error('Error fetching blog data:', error);
+          return {};
+      }
+  }
+
+  async function loadBlog(blogId) {
+      const data = await fetchBlogData();
+      const blog = data[blogId];
+      
+      if (blog) {
+          document.title = blog.title + " | IT ZENATA";
+          document.getElementById('blog-title').innerText = blog.title;
+          document.getElementById('blog-content').innerHTML = formatContentWithImages(blog.content, blog.injectedImages || []);
+          loadRelatedBlogs(blogId, blog.collection);
+      } else {
+          document.getElementById('blog-title').innerText = 'Blog not found';
+          document.getElementById('blog-content').innerText = 'The blog you are looking for does not exist.';
+      }
+  }
+
+  function formatContentWithImages(content, injectedImages) {
+      const lines = content.split('\n');
+      return lines.map((line, index) => {
+          const img = injectedImages.find(img => img.line === index + 1);
+          let html = `<p>${line}</p>`;
+          if (img) {
+              html += `<img src="${img.src}" class="injected-image ${img.position}" alt="Image at line ${index + 1}">`;
+          }
+          return html;
+      }).join('');
+  }
+
+  async function loadRelatedBlogs(currentBlogId, collection) {
+      const data = await fetchBlogData();
+      const relatedBlogs = Object.keys(data).filter(key => data[key].collection === collection && key !== currentBlogId);
+
+      const relatedBlogsContainer = document.getElementById('related-blogs');
+      relatedBlogsContainer.innerHTML = relatedBlogs.map(blogId => {
+          const blog = data[blogId];
+          return `
+              <div class="blog-card">
+                  <img src="${blog.image}" alt="${blog.title}">
+                  <h3>${blog.title}</h3>
+                  <p>${blog.content.substring(0, 100)}...</p>
+                  <a href="blog-detail.html?id=${blogId}" class="read-more">Lire la suite</a>
+              </div>
+          `;
+      }).join('');
+  }
 });

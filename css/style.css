@@ -235,6 +235,7 @@ section {
     gap: 2rem;
     padding: 3rem;
     max-width: 300px;
+    max-height: 580px;
     margin: 5rem auto;
     border: 1px solid #ffffff22;
     background-color: #282c34;
@@ -1155,6 +1156,34 @@ section {
     }
 }
 /* Blog Wrapper - Horizontal scroll container */
+/* Swipe buttons */
+.swipe-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left-swipe {
+    left: 10px;  /* Ensure a small gap from the edge */
+}
+
+.right-swipe {
+    right: 10px;  /* Ensure a small gap from the edge */
+}
+
+.swipe-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Ensure the blog-wrapper is positioned correctly */
 .blog-wrapper {
     display: flex;
     overflow-x: auto;
@@ -1172,11 +1201,13 @@ section {
     display: flex;
     gap: 50px;
     width: fit-content; /* Ensures container is wide enough for all blog boxes */
+    transition: transform 0.3s ease-in-out;
 }
 
 .blog-box {
     flex: 1 1 calc(33.33% - 20px); /* Show 3 blog boxes, subtract the gap */
     min-width: 300px; /* Ensures the boxes won't shrink below this size */
+    max-height: 580px;
     flex-shrink: 0;
 }
 .discover-bar {
@@ -1231,4 +1262,23 @@ section {
 .scroll-btn.right {
     margin-left: 10px;
     display: none;
+}
+
+
+.injected-image {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.injected-image.right {
+    float: right;
+    margin-left: 20px;
+}
+
+.injected-image.left {
+    float: left;
+    margin-right: 20px;
 }
