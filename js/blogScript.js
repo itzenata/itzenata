@@ -112,9 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (blogId && blogs[blogId]) {
         displayBlog(blogs[blogId], blogId, blogs[blogId].collection, blogs);
       } else {
-        // Handle invalid or missing blog ID
-        document.getElementById('blog-title').innerText = 'Blog not found';
-        document.getElementById('blog-content').innerText = 'The blog you are looking for does not exist.';
+      
       }
     })
     .catch(error => console.error('Error loading blog data:', error));
@@ -186,8 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('blog-content').innerHTML = formatContentWithImages(blog.content, blog.injectedImages || []);
           loadRelatedBlogs(blogId, blog.collection);
       } else {
-          document.getElementById('blog-title').innerText = 'Blog not found';
-          document.getElementById('blog-content').innerText = 'The blog you are looking for does not exist.';
+        
       }
   }
 
