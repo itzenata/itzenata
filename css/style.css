@@ -407,6 +407,7 @@ section {
     color: var(--primary-color);
 }
 
+
 /* Section blogs */
 .blog {
     display: flex;
@@ -415,11 +416,11 @@ section {
     width: 100%;
 }
 
-.blog-main-title {
+.blog-title {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
@@ -471,6 +472,18 @@ section {
     font-weight: 500;
     line-height: 1.5;
 }
+
+/* Ajout de marges pour l'image et le texte dans les blogs */
+.blog-box h1 {
+    margin-top: 2rem; /* Espace entre le titre et l'image */
+    margin-bottom: 1.5rem; /* Espace entre le titre et le paragraphe */
+}
+
+.blog-box p {
+    margin-top: 1.5rem; /* Espace entre le titre et le paragraphe */
+}
+
+
 
 /* Responsive Adjustments */
 @media screen and (max-width: 1285px) {
@@ -610,6 +623,31 @@ section {
     .projet-box p {
         font-size: 1.4rem;
     }
+   h1 {
+        font-size: 2rem;
+    }
+
+    .blog-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .blog-box {
+        padding: 2rem;
+        max-width: 100%;
+    }
+
+    .blog-box img {
+        height: 200px;
+    }
+
+    .blog-box h1 {
+        font-size: 2rem;
+    }
+
+    .blog-box p {
+        font-size: 1.4rem;
+    }
 
     .footer {
         background-color: var(--bg-secondary-color);
@@ -687,30 +725,6 @@ section {
     }
     
     
-    /* Responsive adjustments */
-    @media screen and (max-width: 1285px) {
-        .footer {
-            padding: 5rem 3%;
-        }
-    
-        .footer-container {
-            flex-direction: column;
-            gap: 2rem;
-        }
-    
-        .footer-logo {
-            text-align: center;
-        }
-    
-        .footer-social {
-            justify-content: center;
-        }
-    
-        .footer-links {
-            justify-content: center;
-            gap: 1.5rem;
-        }
-    }
     
  /* Section blogs */
 .blog {
@@ -819,53 +833,6 @@ section {
     line-height: 1.6; /* Espacement entre les lignes */
     border-radius: 8px; 
     color: rgb(43, 52, 42);/* Coins arrondis du fond du paragraphe */
-}
-@media screen and (max-width: 768px) {
-    .blog-content {
-        margin: 0; /* Remove margins */
-        font-size: 0.85rem; /* Make the text smaller */
-        padding: 1.5rem; /* Adjust padding */
-        line-height: 1.4; /* Reduce line height to fit more text per line */
-        text-align: justify; /* Ensure the text takes up the full width */
-    }
-
-    .blog-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem; /* Reduce the gap between blog elements */
-        margin: 0 !important;
-    }
-
-    .blog-box {
-        padding: 1.5rem;
-        max-width: 80%;
-        margin: 1rem auto;
-        justify-content: center; /* Centers horizontally */
-        align-items: center; 
-        height: 100%;
-        position: relative; /* Ensure it respects other layers */
-        z-index: 1; /* Keep below header/footer but above background */
-        overflow: hidden; /* Prevent blog items from overflowing into header/footer */
-        margin-top: 2rem; /* Space from the header */
-        margin-bottom: 2rem;/* Disable touch actions like swiping */
-    }
-
-    .blog-box img {
-        height: 20rem; /* Adjust image height */
-        width: 100%; /* Make the image responsive */
-        max-width: 100%; /* Ensure the image doesn't overflow */
-        display: block;
-    }
-
-    .blog-box h1 {
-        font-size: 2rem; /* Adjust title size */
-        text-align: center;
-    }
-
-    .blog-box p {
-        font-size: 1.4rem;
-        text-align: justify;
-    } 
 }
 
 .blog-detail-content {
@@ -984,22 +951,6 @@ section {
     text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .blog-detail-content {
-        flex-direction: column;
-    }
-
-    .blog-detail-container, .related-blogs {
-        width: 100%;
-    }
-
-    .related-blogs {
-        margin-top: 30px;
-    }
-
-   
-}
 
 
 /* Blog Detail Content Layout */
@@ -1023,17 +974,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
-/* Blog Title Styling */
-.blog-title {
-    font-size: 3rem;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left; /* Align the text to the right */
-    margin-bottom: 30px;
-    box-shadow: none; /* Remove the shadow if you want a clean look */
-    background: none; /* Remove the background color */
-}
+
 
 /* Blog date Styling */
 .blog-date {
@@ -1130,52 +1071,7 @@ section {
     width: 50%;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    section{
-        flex: 1;
-        padding: 2rem 2%;
-    }
-    .blog-detail-content {
-        flex-direction: column;
-        padding: 20px;
-    }
 
-    .blog-detail-container, .related-blogs {
-        width: 100%;
-    }
-
-    .related-blogs {
-        margin-top: 30px;
-    }
-
-    #search-bar {
-        width: 100%;
-    }
-
-    .blog-title {
-        font-size: 2rem;
-        padding: 15px;
-    }
-
-    .blog-content {
-        
-        font-size: 2mm;
-        padding: 1px; /* Reduce padding for better layout */
-        line-height: 1.5; /* Adjust line height for readability */
-    }
-    
-    .blog-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .blog-card p {
-        font-size: 0.85rem;
-    }
-    .blog-date{
-        font-size: 0.80rem !important;
-    }
-}
 /* Blog Wrapper - Horizontal scroll container */
 /* Swipe buttons */
 .swipe-btn {
@@ -1218,19 +1114,7 @@ section {
     display: none;  /* Chrome, Safari, and Opera */
 }
 
-.blog-container {
-    display: flex;
-    gap: 50px;
-    width: fit-content; /* Ensures container is wide enough for all blog boxes */
-    transition: transform 0.3s ease-in-out;
-}
 
-.blog-box {
-    flex: 1 1 calc(33.33% - 20px); /* Show 3 blog boxes, subtract the gap */
-    min-width: 300px; /* Ensures the boxes won't shrink below this size */
-    max-height: 580px;
-    flex-shrink: 0;
-}
 .discover-bar {
     display: flex;
     align-items: center;
