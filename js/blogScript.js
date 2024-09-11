@@ -39,7 +39,7 @@ function displayBlog(blog, blogId, collection, blogs) {
   document.getElementById('blog-content').innerText = blog.content;
 
   // Ajout de l'injection de la date d'écriture
-  document.getElementById('blog-date').innerText = "Date d'écriture : " + blog.dateEcriture;
+  document.getElementById('blog-date').innerText = "Date : " + blog.dateEcriture;
 
   loadRelatedBlogs(blogId, collection, blogs);
 }

@@ -833,26 +833,41 @@ section {
         flex-direction: column;
         align-items: center;
         gap: 2rem; /* Reduce the gap between blog elements */
+        margin: 0 !important;
     }
 
     .blog-box {
         padding: 1.5rem;
-        max-width: 90%;
-        margin: 1.5rem auto;
+        max-width: 80%;
+        margin: 1rem auto;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; 
+        height: 100%;
+        position: relative; /* Ensure it respects other layers */
+        z-index: 1; /* Keep below header/footer but above background */
+        overflow: hidden; /* Prevent blog items from overflowing into header/footer */
+        margin-top: 2rem; /* Space from the header */
+        margin-bottom: 2rem;/* Disable touch actions like swiping */
     }
 
     .blog-box img {
-        height: 20rem; /* Reduce image height slightly */
+        height: 20rem; /* Adjust image height */
+        width: 100%; /* Make the image responsive */
+        max-width: 100%; /* Ensure the image doesn't overflow */
+        display: block;
     }
 
     .blog-box h1 {
-        font-size: 2rem; /* Make the title slightly smaller */
+        font-size: 2rem; /* Adjust title size */
+        text-align: center;
     }
 
     .blog-box p {
         font-size: 1.4rem;
-    }   
+        text-align: justify;
+    } 
 }
+
 .blog-detail-content {
     display: flex;
     justify-content: space-between;
