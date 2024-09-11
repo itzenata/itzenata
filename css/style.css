@@ -724,7 +724,7 @@ section {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
@@ -820,47 +820,38 @@ section {
     border-radius: 8px; 
     color: rgb(43, 52, 42);/* Coins arrondis du fond du paragraphe */
 }
-
 @media screen and (max-width: 768px) {
-    .blog-detail-container {
-        padding: 1rem; /* Réduit l'espacement intérieur */
-    }
-
-    .blog-title {
-        font-size: 2rem; /* Taille du texte pour les très petits écrans */
-        margin: 1rem 0; /* Ajuste les marges */
-    }
-
     .blog-content {
-        margin: 0 2%; /* Réduit les marges pour les très petits écrans */
-        font-size: 0.9rem; /* Ajuste la taille du texte */
-        padding: 1rem; /* Ajuste l'espacement intérieur */
+        margin: 0; /* Remove margins */
+        font-size: 0.85rem; /* Make the text smaller */
+        padding: 1.5rem; /* Adjust padding */
+        line-height: 1.4; /* Reduce line height to fit more text per line */
+        text-align: justify; /* Ensure the text takes up the full width */
     }
-}
-@media screen and (max-width: 768px) {
+
     .blog-container {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 2rem; /* Reduce the gap between blog elements */
     }
 
     .blog-box {
-        padding: 2rem;
+        padding: 1.5rem;
         max-width: 90%;
-        margin: 2rem auto;
+        margin: 1.5rem auto;
     }
 
     .blog-box img {
-        height: 200px;
+        height: 20rem; /* Reduce image height slightly */
     }
 
     .blog-box h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Make the title slightly smaller */
     }
 
     .blog-box p {
         font-size: 1.4rem;
-    }
+    }   
 }
 .blog-detail-content {
     display: flex;
@@ -992,9 +983,7 @@ section {
         margin-top: 30px;
     }
 
-    #search-bar {
-        width: 100%;
-    }
+   
 }
 
 
@@ -1128,6 +1117,10 @@ section {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
+    section{
+        flex: 1;
+        padding: 2rem 2%;
+    }
     .blog-detail-content {
         flex-direction: column;
         padding: 20px;
@@ -1152,8 +1145,8 @@ section {
 
     .blog-content {
         
-        font-size: 2rem;
-        padding: 100px; /* Reduce padding for better layout */
+        font-size: 2mm;
+        padding: 1px; /* Reduce padding for better layout */
         line-height: 1.5; /* Adjust line height for readability */
     }
     
@@ -1163,6 +1156,9 @@ section {
 
     .blog-card p {
         font-size: 0.85rem;
+    }
+    .blog-date{
+        font-size: 0.80rem !important;
     }
 }
 /* Blog Wrapper - Horizontal scroll container */
