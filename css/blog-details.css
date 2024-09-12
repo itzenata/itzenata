@@ -1,5 +1,7 @@
-
 /* Blog Details Layout */
+.blog-body {
+    padding: 30px;
+}
 .blog-content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -8,19 +10,59 @@
 
 .blog-post {
     flex: 1;
-    margin-right: 20px; /* Space between blog content and sidebar */
+    margin-right: 20px;
+    border: 1px solid #258F95; /* Add border around blog post */
+    padding: 0px;
+    border-radius: 8px;
+}
+
+.blog-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 2.1rem;
+}
+.blog-text {
+    font-size: 1.5rem;
+}
+.blog-date {
+    margin-left: 10px;
+}
+
+/* Discover Bar */
+.collections-list {
+   
+    margin-bottom: 7px;
+}
+.collection-button {
+    border: 1px solid #258F95;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 8px;
+}
+.collection-button:hover {
+    border: 1px solid #258F95;
+    background-color: #258F95;
+    color: white;
+}
+
+.scroll-button {
+    display: none;
+}
+.scroll-left {
+    display: none;
 }
 
 /* Related Blogs Sidebar */
 .related-blogs-section {
     width: 30%; /* Adjust the width of the related blogs section */
-    padding-left: 10px; /* Optional: Add some padding if necessary */
+    padding-left: 10px;
 }
 
 .related-blogs-title {
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-bottom: 20px;
-    color: #258F95;
 }
 
 .related-blogs-list {
@@ -31,15 +73,17 @@
 
 .related-blogs-section h3 {
     color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Blog Card */
 .blog-card {
-    background-color: transparent; /* No background color */
-    border: 0px solid #ddd;
+    background-color: transparent;
+    border: 1px solid #258F95;
     border-radius: 8px;
     overflow: hidden;
-    width: 100%;
+    width: 75%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
 }
@@ -59,26 +103,115 @@
 .blog-card h3 {
     font-size: 1.2rem;
     padding: 10px 15px;
+    border-bottom: 1px solid #258F95;
 }
 
 .blog-card p {
     padding: 0 15px 15px;
     color: #666;
     font-size: 0.9rem;
+    border-top: 1px solid #258F95;
+    padding-top: 10px;
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
     .blog-content-wrapper {
         flex-direction: column;
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .blog-details{
+        margin: 5px;
+        padding: 5px;
+        margin-top: 100px;
+    }
+    .blog-body{
+        padding: 5px;
+    }
+    .blog-post {
+        margin-right: 0;
+        padding: 5px;
     }
 
-    .related-blogs-section {
-        width: 100%;
+    .blog-title {
+        font-size: 1.8rem; /* Smaller font size for titles */
+        margin-top: 10px;
+    }
+
+    .blog-text {
+        font-size: 0.8rem; /* Adjust text size */
+    }
+
+    .blog-date {
+        margin-left: 0; /* Center the date on mobile */
+        text-align: center;
+        margin-top: 5px;
+    }
+    .collections-list {
+   
+        margin-left: 30px;
+    }
+    
+    .collection-button {
+        font-size: 0.9rem;
+        padding: 5px; /* Smaller padding on buttons */
+        margin: 5px;
+    }
+
+
+    .related-blogs-title {
+        margin-left: 100%;
+        font-size: 2rem;
+        margin-bottom: 20px;
         margin-top: 20px;
+        text-align: center; /* Center the text */
+    }
+    
+
+    .related-blogs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .related-blogs-section h3 {
+        color: white;
+        
+    }
+    .related-blogs-section {
+        width: 30%; /* Adjust the width of the related blogs section */
+        margin: 10px;
+        margin-left: 20px;
     }
 
     .blog-card {
-        width: 100%;
+        background-color: transparent;
+        border: 1px solid #258F95;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 300%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
     }
-}
+
+    .blog-card:hover {
+        box-shadow: 0 0 25px var(--primary-color),
+                    0 0 50px var(--primary-color),
+                    0 0 100px var(--primary-color);
+    }
+
+    .blog-card-image {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .blog-card h3 {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        border-bottom: 1px solid #258F95;
+    
+    }
+    }
+
+

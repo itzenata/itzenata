@@ -78,7 +78,7 @@ function createBlogCard(blog, blogId, container) {
         <a href="blog-detail.html?id=${blogId}" class="read-more">
             <img src="${blog.image}" alt="${blog.title}" class="blog-card-image">
             <h3>${blog.title}</h3>
-            <p>${blog.description}</p>
+         
         </a>
     `;
   container.appendChild(blogCard);
@@ -112,4 +112,17 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Error loading blog data:', error));
 });
+
+// Selecting the menu toggle button and the menu itself
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+// Add click event listener to the hamburger icon
+menuToggle.addEventListener('click', function () {
+    // Toggle the 'active' class for the hamburger animation
+    menuToggle.classList.toggle('active');
+    // Toggle the 'show' class for the menu visibility
+    navMenu.classList.toggle('show');
+});
+
 
