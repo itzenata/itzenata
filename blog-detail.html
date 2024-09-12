@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,56 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Title | IT ZENATA</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog-details.css">
 </head>
 
 <body>
-    <header class="header">
-        <a href="index.html#accueil" class="logo">
+    <header class="site-header">
+        <a href="index.html#home" class="site-logo">
             <img src="assets/images/itzenata-txt-XL.png" alt="IT ZENATA Logo" />
         </a>
-        <nav class="navbar">
-            <a href="index.html#accueil">Accueil</a>
+        <nav class="main-navigation">
+            <a href="index.html#home">Accueil</a>
             <a href="index.html#services">Services</a>
-            <a href="index.html#projets">Projets</a>
+            <a href="index.html#projects">Projets</a>
             <a href="index.html#blogs">Blogs</a>
         </nav>
     </header>
 
-    <section class="blog-detail" id="blog-detail">
-        <!-- Discover bar -->
-        <div class="discover-bar">
-            <button class="scroll-btn left" onclick="scrollLeft()">&#9664;</button>
-            <div class="collections-container" id="collections-container">
+    <section class="blog-details" id="blog-details">
+        <!-- Discover bar for related collections -->
+        <div class="blog-discover-bar">
+            <button class="scroll-button scroll-left" onclick="scrollLeft()">&#9664;</button>
+            <div class="collections-list" id="collections-list">
                 <!-- Collection buttons will be dynamically inserted here -->
             </div>
-            <button class="scroll-btn right" onclick="scrollRight()">&#9654;</button>
+            <button class="scroll-button scroll-right" onclick="scrollRight()">&#9654;</button>
         </div>
     
-        <div class="blog-detail-content">
-            <div class="blog-detail-container">
-                <div class="blog-header">
+        <div class="blog-content-wrapper">
+            <article class="blog-post">
+                <header class="blog-header">
                     <h1 class="blog-title" id="blog-title"></h1>
-                    <!-- Place for the writing date -->
+                    <!-- Date of the blog post -->
                     <p class="blog-date" id="blog-date" style="color: gray; font-style: italic; font-size: 0.9em;"></p>
-                </div>
-                <hr style="border: 0.1px solid #258F95; background-color: #258F95;;">
+                </header>
+                <hr class="divider">
     
-                <p class="blog-content" id="blog-content"></p>
-            </div>
+                <section class="blog-body">
+                    <p class="blog-text" id="blog-content"></p>
+                </section>
+            </article>
     
-            <!-- Related subjects section -->
-            <aside class="related-blogs">
-                <h2 id="related-section-title">Sujets Connexes</h2>
-                <div class="related-blogs-container" id="related-blogs">
+            <!-- Related topics section -->
+            <aside class="related-blogs-section">
+                <h2 class="related-blogs-title" id="related-section-title" >Sujets Connexes</h2>
+                <div class="related-blogs-list" id="related-blogs">
                     <!-- Related blog cards will be injected here -->
                 </div>
             </aside>
         </div>
     </section>
-    
 
+    <script src="js/blog-details.js"></script>
 </body>
-
-<script src="js/blogScript.js"></script>
 
 </html>
