@@ -17,15 +17,21 @@
 }
 
 .blog-title {
-    margin-top: 15px;
+    margin-top: 25px;
     text-align: center;
     font-size: 2.1rem;
+    margin-bottom: 10px;
 }
 .blog-text {
     font-size: 1.5rem;
 }
 .blog-date {
-    margin-left: 10px;
+    margin-left: 5px; /* Center the date on mobile */
+    text-align: left;
+    margin-top: 5px;
+}
+.hrSeparation{
+    border: 0.5px solid #258F95;
 }
 
 /* Discover Bar */
@@ -113,6 +119,22 @@
     border-top: 1px solid #258F95;
     padding-top: 10px;
 }
+.injected-image-left {
+    max-width: 300px;
+    margin: 10px 0 10px 15px;
+    float: left;
+  }
+  
+  .injected-image-right {
+    max-width: 300px;
+    margin: 10px 0 10px 15px;
+    float: right;
+  }
+  
+  .blog-content-wrapper {
+    overflow: auto;
+  }
+  
 
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
@@ -143,9 +165,12 @@
     }
 
     .blog-date {
-        margin-left: 0; /* Center the date on mobile */
-        text-align: center;
+        margin-left: 5px; /* Center the date on mobile */
+        text-align: left;
         margin-top: 5px;
+    }
+    .hrSeparation{
+        border: 0.3px solid #258F95;
     }
     .collections-list {
    
@@ -212,6 +237,21 @@
         border-bottom: 1px solid #258F95;
     
     }
+    .injected-image-left {
+        max-width: 150px;
+        margin: 5px 0 5px 15px;
+        float: left;
+      }
+      
+      .injected-image-right {
+        max-width: 150px;
+        margin: 5px 0 5px 15px;
+        float: right;
+      }
+      
+      .blog-content-wrapper {
+        overflow: auto;
+      }
     }
 
 

@@ -31,15 +31,6 @@ function loadRandomBlogByCollection(collection, blogs) {
   }
 }
 
-// Display blog content and load related blogs
-function displayBlogContent(blog, blogId, collection, blogs) {
-  document.title = `${blog.title} | IT ZENATA`;
-  document.getElementById('blog-title').innerText = blog.title;
-  document.getElementById('blog-content').innerText = blog.content;
-  document.getElementById('blog-date').innerText = `Date : ${blog.dateEcriture}`;
-
-  loadRelatedBlogs(blogId, collection, blogs);
-}
 
 // Load related blogs based on the current blog collection
 function loadRelatedBlogs(currentBlogId, collection, blogs) {
@@ -126,3 +117,44 @@ menuToggle.addEventListener('click', function () {
 });
 
 
+// Display blog content and load related blogs
+function displayBlogContent(blog, blogId, collection, blogs) {
+  document.title = `${blog.title} | IT ZENATA`;
+  const blogTitleElement = document.getElementById('blog-title');
+  const blogContentElement = document.getElementById('blog-content');
+  const blogDateElement = document.getElementById('blog-date');
+
+  blogTitleElement.innerText = blog.title;
+  blogDateElement.innerText = `Date : ${blog.dateEcriture}`;
+
+  const contentWithImages = injectImagesInContent(blog.content, blog.injectedImages);
+  blogContentElement.innerHTML = contentWithImages; // Update content with injected images
+
+  loadRelatedBlogs(blogId, collection, blogs);
+}
+
+// Function to inject images into the content at specified lines and positions
+function injectImagesInContent(content, injectedImages) {
+  // Split content into lines
+  const lines = content.split(/\r?\n/);
+  
+  // Inject images based on their specified line and position
+  injectedImages.forEach(image => {
+    const lineIndex = image.line - 1; // Adjust to 0-indexed
+
+    if (lineIndex < lines.length) {
+      // Create image HTML element
+      const imageHTML = `<img src="${image.src}" alt="Blog image" class="injected-image-${image.position}">`;
+
+      // Inject image at specified position: left or right
+      if (image.position === 'left') {
+        lines[lineIndex] = `<div style="float: left; margin-right: 10px;">${imageHTML}</div>` + lines[lineIndex];
+      } else if (image.position === 'right') {
+        lines[lineIndex] = lines[lineIndex] + `<div style="float: right; margin-left: 10px;">${imageHTML}</div>`;
+      }
+    }
+  });
+
+  // Join the lines back together
+  return lines.join('<br>'); // Use <br> to preserve line breaks in HTML
+}
