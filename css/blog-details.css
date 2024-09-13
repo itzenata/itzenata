@@ -120,12 +120,14 @@
     padding-top: 10px;
 }
 .injected-image-left {
+    border-radius: 8px;
     max-width: 300px;
     margin: 10px 0 10px 15px;
     float: left;
   }
   
   .injected-image-right {
+    border-radius: 8px;
     max-width: 300px;
     margin: 10px 0 10px 15px;
     float: right;

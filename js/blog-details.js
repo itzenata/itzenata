@@ -67,7 +67,7 @@ function createBlogCard(blog, blogId, container) {
   blogCard.classList.add('blog-card');
   blogCard.innerHTML = `
         <a href="blog-detail.html?id=${blogId}" class="read-more">
-            <img src="${blog.image}" alt="${blog.title}" class="blog-card-image">
+            <img src="${blog.image}" alt="Solutions IT innovantes - Création de sites web et applications personnalisées pour entreprisess" class="blog-card-image">
             <h3>${blog.title}</h3>
          
         </a>
