@@ -46,6 +46,7 @@
     padding: 7px;
     border-radius: 10px;
     margin: 8px;
+    cursor: pointer;
 }
 .collection-button:hover {
     border: 1px solid #258F95;
