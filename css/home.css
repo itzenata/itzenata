@@ -327,16 +327,62 @@
 .footer-links a:hover {
     color: var(--primary-color);
 }
-
-
-/* Section blogs */
-.blog {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
+.whatsapp-link {
+    position: fixed;           /* Keeps the button fixed in position */
+    top: 20px;                 /* Distance from the top of the viewport */
+    right: 20px;               /* Distance from the right side of the viewport */
+    background-color: #25d366; /* WhatsApp green color */
+    color: white;              /* Text color */
+    font-size: 2.5rem;         /* Font size */
+    padding: 10px;             /* Padding around the icon */
+    border-radius: 50%;        /* Makes the button round */
+    z-index: 1000;             /* Ensures it's above other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Wave animation */
+.whatsapp-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 211, 102, 1); /* Semi-transparent green */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: -1; /* Places the wave behind the icon */
+    animation: pulse 2s infinite ease-out; /* Pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.6);
+        opacity: 0;
+    }
+}
+
+.whatsapp-link:hover {
+    background-color: #1ebe57; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.whatsapp-link i {
+    display: flex;            /* Flexbox for centering the icon */
+    align-items: center;      /* Center vertically */
+    justify-content: center;  /* Center horizontally */
+}
+
+
+  
 .blog-title {
     font-size: 3.5rem;
     font-weight: 700;
@@ -569,6 +615,7 @@
     .blog-box p {
         font-size: 1.4rem;
     }
+   
 
     .footer {
         background-color: var(--bg-secondary-color);
@@ -598,15 +645,13 @@
         text-align: center;
     }
     
-    .footer-logo {
-        font-size: 3rem;
-        font-weight: 800;
+    .footer img {
+        width: 10px;  /* Set image width to 10px */
+        height: 10px; /* Set image height to 10px */
         cursor: pointer;
         margin-bottom: 2rem;
-    }
-    
-    .footer-logo a {
-        color: white;
+        display: block; /* Ensure image is treated as a block element */
+        object-fit: contain; /* Maintain aspect ratio of the image */
     }
     
     .footer-social {
