@@ -35,7 +35,10 @@
     margin-top: 1.5rem;
     line-height: 1;
 }
-
+.home-content p {
+    font-size: 2rem;
+   
+}
 .home-img {
     border-radius: 50%;
 }
@@ -129,22 +132,23 @@
 .service {
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: calc(100vh - 80px); /* Adjust this based on your navbar height */
     width: 100%;
+    justify-content: center; /* Center the content vertically */
 }
-
 .service-title {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 0.4rem;
+    margin-top: 2rem;
     color: var(--primary-color);
 }
-
 .service-container {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-grow: 1; /* Ensure this takes up the remaining space */
 }
 
 .service-box {
@@ -190,20 +194,21 @@
     font-weight: 500;
     line-height: 1.5;
 }
-
 /* Section projects */
 .projet {
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: calc(100vh - 80px); /* Adjust the height based on your navbar height */
     width: 100%;
+    justify-content: center; /* Center the content vertically */
 }
 
 .projet-title {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
     color: var(--primary-color);
 }
 
@@ -211,6 +216,7 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-grow: 1; /* Make sure the container fills the remaining space */
 }
 
 .projet-box {
@@ -254,6 +260,7 @@
     max-width: fit-content;
     object-fit: cover;
 }
+
 
 /* Section footer */
 .footer {
@@ -387,7 +394,8 @@
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
     color: var(--primary-color);
 }
 
@@ -395,7 +403,9 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 5rem; /* Adjust the top margin to move the blog section down */
 }
+
 
 .blog-box {
     display: flex;
@@ -517,6 +527,7 @@
         font-size: 6rem;
     }
     
+  
     .home-img {
         flex: 1;
         display: flex;
@@ -576,7 +587,8 @@
     .projet-container {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 3rem;
+        margin-top: 10rem;
     }
 
     .projet-box img {
@@ -660,7 +672,26 @@
         margin-bottom: 2rem;
     }
     
-    .footer-social a {
+    .footer-social a {  .projet-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .projet-box img {
+        height: 40rem;
+    }
+
+    .projet-box h1 {
+        font-size: 2rem;
+    }
+
+    .projet-box p {
+        font-size: 1.4rem;
+    }
+   h1 {
+        font-size: 2rem;
+    }
         font-size: 2.5rem;
         color: var(--primary-color);
         margin: 0 1rem;  /* Add spacing between social icons */
