@@ -48,16 +48,6 @@ body {
     height: 100px;
 }
 
-.site-header img {
-    width: 10vw;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    filter: brightness(1.2) contrast(1.1); /* Adjusts brightness and contrast */
-
-}
-.site-header img:hover {
-    transform: scale(1.1); /* Enlarges the image on hover */
-}
 
 
 /* Section Styles */
