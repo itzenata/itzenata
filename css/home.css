@@ -460,15 +460,8 @@
     margin-top: 1.5rem; /* Espace entre le titre et le paragraphe */
 }
 
-
-
 /* Responsive Adjustments */
 @media screen and (max-width: 1285px) {
-    #menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
     .header {
         height: 10vh;
     }
@@ -478,30 +471,6 @@
         cursor: pointer;
     }
     
-    .navbar {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
-        display: none;
-    }
-
-    .navbar.active {
-        display: block;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: white;
-    }
 
     .home {
         display: flex;

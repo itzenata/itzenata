@@ -105,17 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Selecting the menu toggle button and the menu itself
-const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
-
-// Add click event listener to the hamburger icon
-menuToggle.addEventListener('click', function () {
-    // Toggle the 'active' class for the hamburger animation
-    menuToggle.classList.toggle('active');
-    // Toggle the 'show' class for the menu visibility
-    navMenu.classList.toggle('show');
-});
-
 
 // Display blog content and load related blogs
 function displayBlogContent(blog, blogId, collection, blogs) {
@@ -137,7 +127,7 @@ function displayBlogContent(blog, blogId, collection, blogs) {
 function injectImagesInContent(content, injectedImages) {
   // Split content into lines
   const lines = content.split(/\r?\n/);
-  
+
   // Inject images based on their specified line and position
   injectedImages.forEach(image => {
     const lineIndex = image.line - 1; // Adjust to 0-indexed
