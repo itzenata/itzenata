@@ -69,13 +69,15 @@
   #menu-icon {
     display: block; /* Show on small screens */
   }
-  .main-navigation{
- 
+  .main-navigation {
     border-radius: 10%;
-    border: 1px solid  var(--primary-color);
+    border-right: 1px solid var(--primary-color); /* Right border */
+    border-top: 1px solid var(--primary-color); /* Bottom border */
     background-color: black;
-
+    padding: 0;
+    
   }
+  
 
   /* Hide navigation links by default */
   .main-navigation a {
@@ -90,8 +92,10 @@
   /* Show the links when 'show-menu' is active */
   .show-menu a {
     display: block; /* Display links vertically on mobile */
-    text-align: left;
-    padding: 10px 20px; /* Adjust padding for mobile view */
+    text-align: center;
+    padding: 7px ; /* Adjust padding for mobile view */
+    margin-right: 10px;
+    margin-left: 10px;
     
     
   }
@@ -134,10 +138,9 @@
   }
 }
 
-
 /* WhatsApp icon positioned under the navbar */
 .whatsapp-link {
-  position: fixed;           /* Keeps the button fixed in position */
+  position: fixed;           
   top: 80px;                 /* Adjusts the distance under the navbar */
   right: 20px;               /* Distance from the right side of the viewport */
   background-color: #25d366; /* WhatsApp green color */
@@ -147,9 +150,34 @@
   border-radius: 50%;        /* Makes the button round */
   z-index: 1000;             /* Ensures it's above other elements */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s, box-shadow 0.3s;
+
+  /* Apply the animation when the button loads */
+  animation: linkAnimation 0.5s ease-out; /* Apply the animation with 0.5s duration */
 }
 
+    /* Animation for the link effect */
+    @keyframes linkAnimation {
+      from {
+          transform: translateY(-20px); /* Start position */
+          opacity: 0;                   /* Start hidden */
+      }
+      to {
+          transform: translateY(0);      /* End position */
+          opacity: 1;                    /* Fully visible */
+      }
+    }
+
+    .whatsapp-link:hover {
+        background-color: #1ebe57; /* Darker green on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+
+    .whatsapp-link i {
+        display: flex;              /* Align icon */
+        align-items: center;        /* Center icon vertically */
+        justify-content: center;     /* Center icon horizontally */
+    }
