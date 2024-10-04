@@ -204,7 +204,7 @@
     height: 100vh; /* Full viewport height */
     margin-bottom: 5%;
     width: 100%;
-    justify-content: center; /* Center the content vertically */
+    justify-content: center;
 }
 
 .projet-title {
@@ -338,59 +338,7 @@
 .footer-links a:hover {
     color: var(--primary-color);
 }
-.whatsapp-link {
-    position: fixed;           /* Keeps the button fixed in position */
-    top: 20px;                 /* Distance from the top of the viewport */
-    right: 20px;               /* Distance from the right side of the viewport */
-    background-color: #25d366; /* WhatsApp green color */
-    color: white;              /* Text color */
-    font-size: 2.5rem;         /* Font size */
-    padding: 10px;             /* Padding around the icon */
-    border-radius: 50%;        /* Makes the button round */
-    z-index: 1000;             /* Ensures it's above other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
 
-/* Wave animation */
-.whatsapp-link::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(37, 211, 102, 1); /* Semi-transparent green */
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    z-index: -1; /* Places the wave behind the icon */
-    animation: pulse 2s infinite ease-out; /* Pulse animation */
-}
-
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.6);
-        opacity: 0;
-    }
-}
-
-.whatsapp-link:hover {
-    background-color: #1ebe57; /* Darker green on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-.whatsapp-link i {
-    display: flex;            /* Flexbox for centering the icon */
-    align-items: center;      /* Center vertically */
-    justify-content: center;  /* Center horizontally */
-}
 
 .blog{
     height: 100vh;
@@ -467,15 +415,8 @@
     margin-top: 1.5rem; /* Espace entre le titre et le paragraphe */
 }
 
-
-
 /* Responsive Adjustments */
 @media screen and (max-width: 1285px) {
-    #menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
     .header {
         height: 10vh;
     }
@@ -485,45 +426,23 @@
         cursor: pointer;
     }
     
-    .navbar {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
-        display: none;
-    }
-
-    .navbar.active {
-        display: block;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: white;
-    }
 
     .home {
         display: flex;
         flex-direction: column-reverse;
         height: 100vh;
+        
     }
 
     .home-container {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row;
         text-align: center;
         justify-content: center;
         padding-top: 15vh;
-        gap: 1rem;
+        gap: 2rem;
         padding: 1rem;
+        
     }
 
     .home-content h3 {

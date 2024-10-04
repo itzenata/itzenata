@@ -48,37 +48,7 @@ body {
     height: 100px;
 }
 
-.site-header img {
-    width: 10vw;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    filter: brightness(1.2) contrast(1.1); /* Adjusts brightness and contrast */
 
-}
-.site-header img:hover {
-    transform: scale(1.1); /* Enlarges the image on hover */
-}
-
-.main-navigation a {
-    font-size: 1.8rem;
-    color: var(--text-color);
-    font-weight: 800;
-    margin-left: 4rem;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-
-.main-navigation a:hover,
-.main-navigation a:active {
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-}
-
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--primary-color);
-    display: none;
-}
 
 /* Section Styles */
 section {

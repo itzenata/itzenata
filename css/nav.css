@@ -1,0 +1,155 @@
+
+/* Header Styles */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 12%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  height: 100px;
+}
+
+
+/* Basic styles for the navigation bar */
+.main.conta
+.main-navigation {
+  display: flex;
+  justify-content: space-between; /* Space out the menu items */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: var(--background-color); /* Adjust for your design */
+  position: relative;
+}
+
+
+/* Basic styles for the navigation links */
+.main-navigation a {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  font-weight: bold;
+  margin-left: 4rem; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  transition: 0.3s ease;
+  
+}
+
+/* Hover and active states */
+.main-navigation a:hover,
+.main-navigation a.active {
+  color: var(--primary-color);
+  
+}
+
+/* The menu icon for mobile view */
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--primary-color);
+  display: none; /* Hidden on larger screens */
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Align to the right */
+  top: 20px;   /* Position under the navbar */
+}
+
+/* Mobile view: layout changes for small screens */
+@media (max-width: 768px) {
+ 
+  .site-header img{
+    width: 20vw; /* Increase size for larger screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+  /* Show menu icon */
+  #menu-icon {
+    display: block; /* Show on small screens */
+  }
+  .main-navigation{
+ 
+    border-radius: 10%;
+    border: 1px solid  var(--primary-color);
+    background-color: black;
+
+  }
+
+  /* Hide navigation links by default */
+  .main-navigation a {
+    display: none; /* Hide links on small screens */
+    text-align: center;
+   
+   
+    
+   
+  }
+
+  /* Show the links when 'show-menu' is active */
+  .show-menu a {
+    display: block; /* Display links vertically on mobile */
+    text-align: left;
+    padding: 10px 20px; /* Adjust padding for mobile view */
+    
+    
+  }
+
+  /* Stack the menu icon and navigation vertically */
+
+  .main-navigation {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align links to the left */
+    margin-top: 70%;
+    text-decoration: none;
+    border-radius: 10%;
+  }
+
+  .show-menu .main-navigation {
+    flex-direction: column;
+    
+  }
+}
+
+/* Display the navigation normally on larger screens */
+@media (min-width: 769px) {
+  .site-header img{
+    width: 10vw; /* Increase size for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    filter: brightness(1.2) contrast(1.1);
+  }
+  .main-navigation {
+    display: flex;
+    flex-direction: row; /* Align links horizontally */
+    gap: 20px; /* Adjust gap between items */
+  }
+
+  .main-navigation a {
+    display: inline-block;
+  }
+
+  #menu-icon {
+    display: none; /* Hide menu icon on larger screens */
+  }
+}
+
+
+/* WhatsApp icon positioned under the navbar */
+.whatsapp-link {
+  position: fixed;           /* Keeps the button fixed in position */
+  top: 80px;                 /* Adjusts the distance under the navbar */
+  right: 20px;               /* Distance from the right side of the viewport */
+  background-color: #25d366; /* WhatsApp green color */
+  color: white;              /* Text color */
+  font-size: 2.5rem;         /* Font size */
+  padding: 10px;             /* Padding around the icon */
+  border-radius: 50%;        /* Makes the button round */
+  z-index: 1000;             /* Ensures it's above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
