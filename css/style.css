@@ -32,26 +32,11 @@ body {
     flex-direction: column;
 }
 
-/* Header Styles */
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 4rem 12%;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 5;
-    height: 100px;
-}
 
 
 
 /* Section Styles */
 section {
     flex: 1;
-    padding: 10rem 12%;
+    padding: 10rem 9%;
 }
