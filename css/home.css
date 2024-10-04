@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .home {
     display: flex;
     align-items: center;
@@ -14,7 +18,7 @@
     justify-content: center;
     padding-top: 15vh;
     gap: 1rem;
-    padding: 1rem;
+    padding: 0rem;
     margin-top: 2%;
 }
 

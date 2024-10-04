@@ -71,8 +71,8 @@
   }
   .main-navigation {
     border-radius: 10%;
-    border-right: 1px solid var(--primary-color); /* Right border */
-    border-top: 1px solid var(--primary-color); /* Bottom border */
+    border-left: 1px solid var(--primary-color); /* Right border */
+    border-bottom: 1px solid var(--primary-color); /* Bottom border */
     background-color: black;
     padding: 0;
     
