@@ -140,7 +140,7 @@
 
 /* WhatsApp icon positioned under the navbar */
 .whatsapp-link {
-  position: fixed;           /* Keeps the button fixed in position */
+  position: fixed;           
   top: 80px;                 /* Adjusts the distance under the navbar */
   right: 20px;               /* Distance from the right side of the viewport */
   background-color: #25d366; /* WhatsApp green color */
