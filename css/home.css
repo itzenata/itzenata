@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    min-height: 100vh; /* Full viewport height */
+    margin-bottom: 2rem; /* Margin between sections */
 }
 
 .home-container {
@@ -132,9 +134,10 @@
 .service {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 80px); /* Adjust this based on your navbar height */
+    height: 100vh; /* Full viewport height */
     width: 100%;
-    justify-content: center; /* Center the content vertically */
+    justify-content: center;
+    margin-bottom: 2rem; /* Margin between sections */
 }
 .service-title {
     font-size: 3.5rem;
@@ -198,7 +201,7 @@
 .projet {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     margin-bottom: 5%;
     width: 100%;
     justify-content: center;
@@ -337,13 +340,15 @@
 }
 
 
-
+.blog{
+    height: 100vh;
+}
   
 .blog-title {
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 3rem;
+
     margin-top: 3rem;
     color: var(--primary-color);
 }
@@ -352,7 +357,8 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 5rem; /* Adjust the top margin to move the blog section down */
+    margin-top: 1rem; /* Adjust the top margin to move the blog section down */
+   
 }
 
 
