@@ -60,6 +60,10 @@
 
 /* Mobile view: layout changes for small screens */
 @media (max-width: 768px) {
+  .blog-page-logo{
+    width: 10px;
+    height: auto;
+  }
  
   .site-header img{
     width: 20vw; /* Increase size for larger screens */
@@ -75,7 +79,7 @@
     border-bottom: 1px solid var(--primary-color); /* Bottom border */
     background-color: black;
     padding: 0;
-    margin-right: 5%;
+    margin-right: 4%;
     
   }
   

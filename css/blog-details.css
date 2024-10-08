@@ -1,13 +1,18 @@
 /* Blog Details Layout */
 .blog-body {
     padding: 30px;
+    margin: 0;
 }
 .blog-content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-
+.blog-image{
+    height: 45px;
+    margin-top: 1.5%;
+    margin-left: 10%;
+}
 .blog-post {
     flex: 1;
     margin-right: 20px;
@@ -141,6 +146,13 @@
 
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
+
+    .blog-image{
+        height: 30px;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+   
     .blog-content-wrapper {
         flex-direction: column;
         padding: 15px; /* Adjust padding for smaller screens */
@@ -148,7 +160,7 @@
     .blog-details{
         margin: 5px;
         padding: 5px;
-        margin-top: 100px;
+        margin-top: 50px;
     }
     .blog-body{
         padding: 5px;
