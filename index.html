@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-829106022">
 </script>
@@ -10,7 +12,6 @@
 
   gtag('config', 'AW-829106022');
 </script>
-  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Optimized Meta Description -->
@@ -83,7 +84,7 @@
               >Rejoignez notre équipe</a>
             <a
               href="mailto:contact@itzenata.tech?subject=Demande d'information"
-              class="btn"
+              class="btn contactUsLink"
               >Contactez-nous</a>
             </a>
           </div>
@@ -238,7 +239,7 @@
           <a href="#blogs">Blogs</a>
           <a
             href="mailto:contact@itzenata.tech?subject=Demande d'information"
-            class="btn" 
+            class="btn contactUsLink" 
             >Contactez-nous</a>
         </div>
       </div>
@@ -254,5 +255,34 @@
  
   </body>
 
+  <script>
+    // Select the WhatsApp link and "Contactez-nous" link
+const myWhatsappLink = document.querySelector('.whatsapp-link'); // Use querySelector for a single element
+const contactUsLink = document.querySelector('.contactUsLink');
+
+// Add click event listener to the WhatsApp link
+if (myWhatsappLink) {
+  myWhatsappLink.addEventListener('click', function () {
+    gtag('event', 'conversion', {
+      send_to: 'AW-829106022/8qT3CKecgdIZEObOrIsD',
+      value: 1.0,
+      currency: 'MAD',
+    });
+  });
+}
+
+// Add click event listener to the "Contactez-nous" link
+if (contactUsLink) {
+  contactUsLink.addEventListener('click', function () {
+    gtag('event', 'conversion', {
+      send_to: 'AW-829106022/8qT3CKecgdIZEObOrIsD',
+      value: 0.5, // You can assign a different value for this action
+      currency: 'MAD',
+    });
+  });
+}
+
+  </script>
+  
   <script src="js/main.js"></script>
 </html>
