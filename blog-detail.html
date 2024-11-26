@@ -1,59 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-829106022"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    gtag("config", "AW-829106022");
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Title | IT ZENATA</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/blog-details.css">
-  
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-details.css" />
+  </head>
 
-<body>
+  <body>
     <header class="site-header">
-        <a href="index.html#home" class="site-logo">
-            <img class="blog-image" src="assets/images/LOGO_ITZENATA.png" alt="IT ZENATA Logo" />
-        </a>
-        
+      <a href="index.html#home" class="site-logo">
+        <img
+          class="blog-image"
+          src="assets/images/LOGO_ITZENATA.png"
+          alt="IT ZENATA Logo"
+        />
+      </a>
     </header>
 
     <section class="blog-details" id="blog-details">
-        <!-- Discover bar for related collections -->
-        <div class="blog-discover-bar">
-            <button class="scroll-button scroll-left" onclick="scrollLeft()">&#9664;</button>
-            <div class="collections-list" id="collections-list">
-                <!-- Collection buttons will be dynamically inserted here -->
-            </div>
-            <button class="scroll-button scroll-right" onclick="scrollRight()">&#9654;</button>
+      <!-- Discover bar for related collections -->
+      <div class="blog-discover-bar">
+        <button class="scroll-button scroll-left" onclick="scrollLeft()">
+          &#9664;
+        </button>
+        <div class="collections-list" id="collections-list">
+          <!-- Collection buttons will be dynamically inserted here -->
         </div>
-    
-        <div class="blog-content-wrapper">
-            <article class="blog-post">
-                <header class="blog-header">
-                    <h1 class="blog-title" id="blog-title"></h1>
-                    <!-- Date of the blog post -->
-                    <p class="blog-date" id="blog-date" style="color: gray; font-style: italic; font-size: 0.9em;"></p>
-                </header>
-                <hr class="hrSeparation">
-    
-                <section class="blog-body">
-                    <p class="blog-text" id="blog-content"></p>
-                </section>
-            </article>
-    
-            <!-- Related topics section -->
-            <aside class="related-blogs-section">
-                <h2 class="related-blogs-title" id="related-section-title" >Sujets Connexes</h2>
-                <div class="related-blogs-list" id="related-blogs">
-                    <!-- Related blog cards will be injected here -->
-                </div>
-            </aside>
-        </div>
+        <button class="scroll-button scroll-right" onclick="scrollRight()">
+          &#9654;
+        </button>
+      </div>
+
+      <div class="blog-content-wrapper">
+        <article class="blog-post">
+          <header class="blog-header">
+            <h1 class="blog-title" id="blog-title"></h1>
+            <!-- Date of the blog post -->
+            <p
+              class="blog-date"
+              id="blog-date"
+              style="color: gray; font-style: italic; font-size: 0.9em"
+            ></p>
+          </header>
+          <hr class="hrSeparation" />
+
+          <section class="blog-body">
+            <p class="blog-text" id="blog-content"></p>
+          </section>
+        </article>
+
+        <!-- Related topics section -->
+        <aside class="related-blogs-section">
+          <h2 class="related-blogs-title" id="related-section-title">
+            Sujets Connexes
+          </h2>
+          <div class="related-blogs-list" id="related-blogs">
+            <!-- Related blog cards will be injected here -->
+          </div>
+        </aside>
+      </div>
     </section>
 
     <script src="js/blog-details.js"></script>
-</body>
-
+  </body>
 </html>
