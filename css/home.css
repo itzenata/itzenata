@@ -295,6 +295,28 @@ body{
     max-width: fit-content;
     object-fit: cover;
 }
+/* Nous trouver  Section */
+
+.nous-trouver {
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .map-container {
+    position: relative;
+    height: 450px; /* Custom height for the map */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
 
 
 /* Contact Section */
