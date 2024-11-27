@@ -295,6 +295,303 @@ body{
     max-width: fit-content;
     object-fit: cover;
 }
+/* Contact Section */
+.nous-trouver-contact {
+    padding: 5rem 2rem;
+    background: black;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+  }
+  
+  /* Contact Container */
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 75%;
+    margin: 0 auto; /* Center the container itself */
+  }
+  
+  /* Google Map */
+  .map-container {
+    flex: 1;
+    position: relative;
+    height: 410px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contact Form & Info Container */
+  .contact-form-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    flex: 1;
+    background: #282c34;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .contact-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #1c1f26;
+    color: #fff;
+    font-size: 1.4rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--primary-color);
+  }
+  
+  .contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #ff4081;
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    flex: 1;
+    background: #282c34;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .contact-info p {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-info i {
+    margin-right: 0.8rem;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+  }
+  
+  .contact-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+    color: var(--primary-color);
+  }
+  
+  .contact-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .contact-social a {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+  
+  .contact-social a:hover {
+    color: #ff4081;
+  }
+  
+/* Responsive Styles */
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Contact Container: Stack elements vertically on small screens */
+    .contact-container {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    /* Google Map */
+    .map-container {
+      width: 100%;
+      height: 300px; /* Adjust map height for mobile screens */
+      margin-bottom: 2rem; /* Space between map and form */
+    }
+  
+    /* Contact Form & Info Container: Stack them vertically */
+    .contact-form-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Contact Form */
+    .contact-form {
+      width: 100%;
+      margin-bottom: 2rem; /* Space between form and info */
+    }
+  
+    /* Contact Info */
+    .contact-info {
+      width: 100%;
+    }
+  
+    /* Section Title */
+    .section-title {
+      font-size: 2.5rem; /* Smaller title on mobile */
+      margin-bottom: 3rem;
+    }
+  
+    /* Form input and button adjustments */
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1.2rem;
+    }
+  
+    .contact-form button {
+      font-size: 1.4rem;
+    }
+  }
+  /* Mobile Responsiveness (480px) */
+@media (max-width: 480px) {
+    /* Contact Container: Stack elements vertically on small screens */
+    .contact-container {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    /* Google Map */
+    .map-container {
+      width: 100%;
+      height: 250px; /* Adjust map height for mobile screens */
+      margin-bottom: 2rem;
+    }
+  
+    /* Contact Form & Info Container: Stack them vertically */
+    .contact-form-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Contact Form */
+    .contact-form {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    /* Contact Info */
+    .contact-info {
+      width: 100%;
+    }
+  
+    /* Section Title */
+    .section-title {
+      font-size: 2rem; /* Smaller title on mobile */
+      margin-bottom: 3rem;
+    }
+  
+    /* Form input and button adjustments */
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1.2rem;
+    }
+  
+    .contact-form button {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Large Screen Responsiveness (1285px) */
+  @media (max-width: 1285px) {
+    /* Contact Container: Adjust layout for medium screens */
+    .contact-container {
+      width: 90%; /* Adjust container width for medium screens */
+    }
+  
+    /* Google Map */
+    .map-container {
+      height: 350px; /* Adjust map height for medium screens */
+    }
+  
+    /* Contact Form & Info Container */
+    .contact-form-container {
+      gap: 1.5rem; /* Reduce gap between form and info */
+    }
+  
+    /* Contact Form */
+    .contact-form,
+    .contact-info {
+      padding: 2rem;
+    }
+  
+    /* Section Title */
+    .section-title {
+      font-size: 3rem; /* Slightly smaller title for medium screens */
+    }
+  
+    /* Form input and button adjustments */
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1.3rem;
+    }
+  
+    .contact-form button {
+      font-size: 1.5rem;
+    }
+  }
+  
+
+  
 
 
 /* Section footer */
