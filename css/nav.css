@@ -143,26 +143,7 @@
   }
 }
 
-/* WhatsApp icon positioned under the navbar */
-.whatsapp-link {
-  position: fixed;           
-  top: 80px;                 /* Adjusts the distance under the navbar */
-  right: 20px;               /* Distance from the right side of the viewport */
-  background-color: #25d366; /* WhatsApp green color */
-  color: white;              /* Text color */
-  font-size: 2.5rem;         /* Font size */
-  padding: 10px;             /* Padding around the icon */
-  border-radius: 50%;        /* Makes the button round */
-  z-index: 1000;             /* Ensures it's above other elements */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s, box-shadow 0.3s;
-
-  /* Apply the animation when the button loads */
-  animation: linkAnimation 0.5s ease-out; /* Apply the animation with 0.5s duration */
-}
+/* WhatsApp icon positioned under the navbar *
 
     /* Animation for the link effect */
     @keyframes linkAnimation {
@@ -174,15 +155,4 @@
           transform: translateY(0);      /* End position */
           opacity: 1;                    /* Fully visible */
       }
-    }
-
-    .whatsapp-link:hover {
-        background-color: #1ebe57; /* Darker green on hover */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-    }
-
-    .whatsapp-link i {
-        display: flex;              /* Align icon */
-        align-items: center;        /* Center icon vertically */
-        justify-content: center;     /* Center icon horizontally */
     }
