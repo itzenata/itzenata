@@ -346,9 +346,11 @@ body{
 
   }
   .contact-info h2 {
+    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
     color: var(--primary-color);
+    
   }
   
   .contact-info p {
@@ -368,6 +370,7 @@ body{
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
+    
   }
   
   .contact-info a:hover {
@@ -385,12 +388,34 @@ body{
     font-size: 2rem;
     color: var(--primary-color);
     transition: color 0.3s ease;
+    
   }
   
-  .contact-social a:hover {
-    color: #2f8fcf;
-  }
   
+  /* Contactez-nous Button Styling */
+.contactUsLink2 {
+    display: block; /* Make the button a block element */
+    text-align: center; /* Center the text inside the button */
+    background-color: var(--primary-color); /* Replace with your theme's primary color */
+    color: #fff; /* White text */
+    font-size: 1.5rem; /* Adjust the font size */
+    padding: 1rem 2rem; /* Padding for the button */
+    border-radius: 10px; /* Rounded corners */
+    margin: 3rem auto; /* Center the button and add spacing */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.contactUsLink2:hover {
+    scale: 1.001; /* Hover color */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: white !important;
+}
+
+.contactUsLink2:active {
+    transform: translateY(0); /* Reset on active click */
+}
+
 /* Responsive Styles */
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
