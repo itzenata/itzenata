@@ -1,0 +1,50 @@
+{
+    "metadata": {
+      "title": "IT ZENATA",
+      "description": "Welcome to IT ZENATA, your go-to place for cutting-edge IT solutions.",
+      "keywords": "IT, technology, software, development, DevOps, backend, frontend",
+      "author": "IT Zenata Team"
+    },
+    "header": {
+      "logo": "IT <span>ZENATA</span>",
+      "links": [
+        { "href": "#home", "text": "Home", "active": true },
+        { "href": "#services", "text": "Services" },
+        { "href": "#projects", "text": "Projects" }
+      ]
+    },
+    "home": {
+      "heading": "Bonjour, on est IT ZENATA",
+      "subheading": "On est innovateurs en technologie",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit..."
+    },
+    "services": [
+      {
+        "image": "assets/services/devops.png",
+        "title": "DevOps",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicien..."
+      },
+      {
+        "image": "assets/services/backend.png",
+        "title": "Development Backend",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicien..."
+      },
+      {
+        "image": "assets/services/front.png",
+        "title": "Development Frontend",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicien..."
+      }
+    ],
+    "projects": [
+      {
+        "image": "assets/projects/coindesreducs.png"
+      },
+      {
+        "image": "assets/projects/momunity.png"
+      },
+      {
+        "image": "assets/projects/kplay.png"
+      }
+    ]
+  }
+  
