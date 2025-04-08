@@ -6,6 +6,7 @@ function shuffleArray(array) {
   }
   return array;
 }
+
 // Load collection buttons dynamically
 function loadCollectionButtons(blogs) {
   const collections = [
@@ -14,6 +15,7 @@ function loadCollectionButtons(blogs) {
     "lifestyle",
     "sports",
     "design",
+    "technologie",
     "autre",
   ];
   const collectionContainer = document.getElementById("collections-list");
@@ -28,6 +30,7 @@ function loadCollectionButtons(blogs) {
     collectionContainer.appendChild(button);
   });
 }
+
 // Load a random blog post based on the selected collection
 function loadRandomBlogByCollection(collection, blogs) {
   const filteredBlogs = Object.entries(blogs).filter(
@@ -38,6 +41,7 @@ function loadRandomBlogByCollection(collection, blogs) {
     displayBlogContent(randomBlog[1], randomBlog[0], collection, blogs);
   }
 }
+
 // Load related blogs based on the current blog collection
 function loadRelatedBlogs(currentBlogId, collection, blogs) {
   const relatedBlogsContainer = document.getElementById("related-blogs");
@@ -58,6 +62,7 @@ function loadRelatedBlogs(currentBlogId, collection, blogs) {
     loadOtherBlogs(currentBlogId, collection, blogs);
   }
 }
+
 // Load blogs from other collections when no related blogs are found
 function loadOtherBlogs(currentBlogId, collection, blogs) {
   const otherBlogsContainer = document.getElementById("related-blogs");
@@ -73,6 +78,7 @@ function loadOtherBlogs(currentBlogId, collection, blogs) {
     createBlogCard(blog, key, otherBlogsContainer)
   );
 }
+
 // Create a blog card element
 function createBlogCard(blog, blogId, container) {
   const blogCard = document.createElement("div");
@@ -86,23 +92,28 @@ function createBlogCard(blog, blogId, container) {
     `;
   container.appendChild(blogCard);
 }
+
 // Scroll functions for the discover bar
 function scrollCollectionsLeft() {
   const collectionContainer = document.getElementById("collections-list");
   collectionContainer.scrollBy({ left: -200, behavior: "smooth" });
 }
+
 function scrollCollectionsRight() {
   const collectionContainer = document.getElementById("collections-list");
   collectionContainer.scrollBy({ left: 200, behavior: "smooth" });
 }
+
 // Fetch blog data and initialize the page
 document.addEventListener("DOMContentLoaded", function () {
   fetch("data/blogsData.json")
     .then((response) => response.json())
     .then((blogs) => {
       loadCollectionButtons(blogs);
+
       // Get the blog ID from the URL parameters
       const blogId = new URLSearchParams(window.location.search).get("id");
+
       // Display the blog if the ID is valid, otherwise load a default blog
       if (blogId && blogs[blogId]) {
         displayBlogContent(
@@ -115,27 +126,34 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error loading blog data:", error));
 });
+
 // Selecting the menu toggle button and the menu itself
 const navMenu = document.getElementById("nav-menu");
+
 // Display blog content and load related blogs
 function displayBlogContent(blog, blogId, collection, blogs) {
   document.title = `${blog.title} | IT ZENATA`;
   const blogTitleElement = document.getElementById("blog-title");
   const blogContentElement = document.getElementById("blog-content");
   const blogDateElement = document.getElementById("blog-date");
+
   blogTitleElement.innerText = blog.title;
   blogDateElement.innerText = `Date : ${blog.dateEcriture}`;
+
   const contentWithImages = injectImagesInContent(
     blog.content,
     blog.injectedImages
   );
   blogContentElement.innerHTML = contentWithImages; // Update content with injected images
+
   loadRelatedBlogs(blogId, collection, blogs);
 }
+
 // Function to inject images into the content at specified lines and positions
 function injectImagesInContent(content, injectedImages) {
   // Split content into lines
   const lines = content.split(/\r?\n/);
+
   // Inject images based on their specified line and position
   injectedImages.forEach((image) => {
     const lineIndex = image.line - 1; // Adjust to 0-indexed
@@ -156,6 +174,7 @@ function injectImagesInContent(content, injectedImages) {
       }
     }
   });
+
   // Join the lines back together
   return lines.join("<br>"); // Use <br> to preserve line breaks in HTML
 }
