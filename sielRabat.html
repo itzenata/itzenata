@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste des Événements SIEL</title>
+    <link rel="stylesheet" href="/css/sielData.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Événements à venir</h1>
+
+    <div class="filter-container">
+      <div class="filter-group">
+        <span class="filter-label">Date :</span>
+        <select id="dateFilter">
+          <option value="all">Toutes les dates</option>
+          <!-- Les dates seront ajoutées dynamiquement -->
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Heure :</span>
+        <select id="timeFilter">
+          <option value="all">Toutes les heures</option>
+          <!-- Les heures seront ajoutées dynamiquement -->
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Thème :</span>
+        <select id="themeFilter">
+          <option value="all">Tous les thèmes</option>
+          <!-- Les thèmes seront ajoutés dynamiquement -->
+        </select>
+      </div>
+
+      <button id="resetFilters">Réinitialiser les filtres</button>
+    </div>
+
+    <div class="event-count" id="eventCount"></div>
+    <div class="cards" id="eventCards"></div>
+
+    <script src="/js/sielData.js"></script>
+  </body>
+</html>
