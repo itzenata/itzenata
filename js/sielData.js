@@ -4,7 +4,7 @@ let filteredEvents = [];
 
 // Fonction pour charger et afficher les événements
 function loadEvents() {
-  fetch("data/sielData.json")
+  fetch("/data/sielData.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Erreur HTTP: ${response.status}`);
