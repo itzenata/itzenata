@@ -31,6 +31,9 @@ function loadEvents() {
       // Afficher tous les événements au départ
       filteredEvents = [...allEvents];
       displayEvents();
+
+      // Mettre à jour les indicateurs de filtres actifs
+      updateFilterIndicators();
     })
     .catch((error) => {
       console.error("Erreur de chargement des données SIEL :", error);
@@ -62,20 +65,31 @@ function cleanEventData() {
 
     // Extraire l'heure de début pour le filtre (première partie avant le tiret ou l'événement complet)
     event.startTime = event.time.split("–")[0].split("-")[0].trim();
+
+    // Extraire les jours et mois pour les pills
+    try {
+      const [year, month, day] = event.date.split("-");
+      event.day = parseInt(day);
+      event.month = parseInt(month);
+    } catch (e) {
+      // En cas d'erreur, définir des valeurs par défaut
+      event.day = 0;
+      event.month = 0;
+      console.error(
+        "Erreur lors de l'extraction de la date pour l'événement:",
+        event.title
+      );
+    }
   });
 }
 
 // Fonction pour initialiser les filtres
 function initFilters() {
-  const dateFilter = document.getElementById("dateFilter");
   const themeFilter = document.getElementById("themeFilter");
   const timeFilter = document.getElementById("timeFilter");
+  const daysSelector = document.getElementById("daysSelector");
 
   // Vider les options existantes (sauf la première)
-  while (dateFilter.options.length > 1) {
-    dateFilter.remove(1);
-  }
-
   while (themeFilter.options.length > 1) {
     themeFilter.remove(1);
   }
@@ -84,20 +98,71 @@ function initFilters() {
     timeFilter.remove(1);
   }
 
-  // Extraire les dates uniques
+  // Vider les jours Pills précédentes s'il y en a
+  if (daysSelector) {
+    daysSelector.innerHTML = "";
+
+    // Ajouter le jour "Tous" en premier
+    const allDaysBtn = document.createElement("div");
+    allDaysBtn.className = "day-pill active";
+    allDaysBtn.dataset.date = "all";
+    allDaysBtn.textContent = "Tous";
+    allDaysBtn.addEventListener("click", (e) => selectDayPill(e));
+    daysSelector.appendChild(allDaysBtn);
+  }
+
+  // Extraire les dates uniques et les organiser par jours
   const uniqueDates = [...new Set(allEvents.map((event) => event.date))];
   uniqueDates.sort();
 
-  // Ajouter les options de date
-  uniqueDates.forEach((date) => {
-    if (date && date !== "Date non spécifiée") {
-      const formattedDate = formatDate(date);
-      const option = document.createElement("option");
-      option.value = date;
-      option.textContent = formattedDate;
-      dateFilter.appendChild(option);
-    }
-  });
+  // Créer les pills de jours
+  if (daysSelector) {
+    uniqueDates.forEach((date) => {
+      if (date && date !== "Date non spécifiée") {
+        try {
+          // Créer une pill pour chaque jour
+          const [year, month, day] = date.split("-");
+          const dateObj = new Date(
+            parseInt(year),
+            parseInt(month) - 1,
+            parseInt(day)
+          );
+
+          // Formater juste le jour (numéro)
+          const dayNum = dateObj.getDate();
+
+          // Obtenir le nom court du mois en français
+          const monthNames = [
+            "Jan",
+            "Fév",
+            "Mar",
+            "Avr",
+            "Mai",
+            "Juin",
+            "Juil",
+            "Août",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Déc",
+          ];
+          const monthName = monthNames[dateObj.getMonth()];
+
+          const dayPill = document.createElement("div");
+          dayPill.className = "day-pill";
+          dayPill.dataset.date = date;
+          dayPill.textContent = `${dayNum} ${monthName}`;
+          dayPill.addEventListener("click", (e) => selectDayPill(e));
+          daysSelector.appendChild(dayPill);
+        } catch (error) {
+          console.error(
+            "Erreur lors de la création des pills de jours:",
+            error
+          );
+        }
+      }
+    });
+  }
 
   // Extraire les thèmes uniques
   const uniqueThemes = [...new Set(allEvents.map((event) => event.theme))];
@@ -134,12 +199,27 @@ function initFilters() {
   });
 
   // Ajouter les écouteurs d'événements
-  dateFilter.addEventListener("change", applyFilters);
   themeFilter.addEventListener("change", applyFilters);
   timeFilter.addEventListener("change", applyFilters);
   document
     .getElementById("resetFilters")
     .addEventListener("click", resetFilters);
+}
+
+// Nouvelle fonction pour la sélection des day pills
+function selectDayPill(e) {
+  const pill = e.target;
+  const daysSelector = document.getElementById("daysSelector");
+
+  // Supprimer la classe active de toutes les pills
+  const allPills = daysSelector.querySelectorAll(".day-pill");
+  allPills.forEach((p) => p.classList.remove("active"));
+
+  // Ajouter la classe active à la pill sélectionnée
+  pill.classList.add("active");
+
+  // Appliquer les filtres
+  applyFilters();
 }
 
 // Fonction pour convertir l'heure en minutes pour le tri
@@ -186,9 +266,92 @@ function formatDate(dateStr) {
   }
 }
 
+// Fonction pour mettre à jour les indicateurs de filtres actifs
+function updateFilterIndicators() {
+  const filterIndicator = document.getElementById("filterIndicator");
+  if (!filterIndicator) return;
+
+  const selectedDate = getSelectedDate();
+  const selectedTheme = document.getElementById("themeFilter").value;
+  const selectedTime = document.getElementById("timeFilter").value;
+
+  // Vider les indicateurs précédents
+  filterIndicator.innerHTML = "";
+
+  // Vérifier s'il y a des filtres actifs
+  const hasActiveFilters =
+    selectedDate !== "all" || selectedTheme !== "all" || selectedTime !== "all";
+
+  if (!hasActiveFilters) {
+    filterIndicator.innerHTML = "Aucun filtre actif";
+    return;
+  }
+
+  // Construire les indicateurs pour chaque filtre actif
+  if (selectedDate !== "all") {
+    const formattedDate = formatDate(selectedDate);
+    const indicator = document.createElement("span");
+    indicator.className = "active-filter";
+    indicator.innerHTML = `Date: ${formattedDate} <span class="clear-filter" data-filter="date">×</span>`;
+    indicator.querySelector(".clear-filter").addEventListener("click", () => {
+      resetDateFilter();
+      applyFilters();
+    });
+    filterIndicator.appendChild(indicator);
+  }
+
+  if (selectedTheme !== "all") {
+    const indicator = document.createElement("span");
+    indicator.className = "active-filter";
+    indicator.innerHTML = `Thème: ${selectedTheme} <span class="clear-filter" data-filter="theme">×</span>`;
+    indicator.querySelector(".clear-filter").addEventListener("click", () => {
+      document.getElementById("themeFilter").value = "all";
+      applyFilters();
+    });
+    filterIndicator.appendChild(indicator);
+  }
+
+  if (selectedTime !== "all") {
+    const indicator = document.createElement("span");
+    indicator.className = "active-filter";
+    indicator.innerHTML = `Heure: ${selectedTime} <span class="clear-filter" data-filter="time">×</span>`;
+    indicator.querySelector(".clear-filter").addEventListener("click", () => {
+      document.getElementById("timeFilter").value = "all";
+      applyFilters();
+    });
+    filterIndicator.appendChild(indicator);
+  }
+}
+
+// Fonction pour obtenir la date sélectionnée
+function getSelectedDate() {
+  const daysSelector = document.getElementById("daysSelector");
+  if (daysSelector) {
+    const activePill = daysSelector.querySelector(".day-pill.active");
+    if (activePill) {
+      return activePill.dataset.date;
+    }
+  }
+  return "all";
+}
+
+// Fonction pour réinitialiser le filtre de date
+function resetDateFilter() {
+  const daysSelector = document.getElementById("daysSelector");
+  if (daysSelector) {
+    const allPills = daysSelector.querySelectorAll(".day-pill");
+    allPills.forEach((pill) => pill.classList.remove("active"));
+
+    const allPill = daysSelector.querySelector('.day-pill[data-date="all"]');
+    if (allPill) {
+      allPill.classList.add("active");
+    }
+  }
+}
+
 // Fonction pour appliquer les filtres
 function applyFilters() {
-  const selectedDate = document.getElementById("dateFilter").value;
+  const selectedDate = getSelectedDate();
   const selectedTheme = document.getElementById("themeFilter").value;
   const selectedTime = document.getElementById("timeFilter").value;
 
@@ -201,15 +364,20 @@ function applyFilters() {
   });
 
   displayEvents();
+  updateFilterIndicators();
 }
 
 // Fonction pour réinitialiser les filtres
 function resetFilters() {
-  document.getElementById("dateFilter").value = "all";
   document.getElementById("themeFilter").value = "all";
   document.getElementById("timeFilter").value = "all";
+
+  // Réinitialiser également les day pills
+  resetDateFilter();
+
   filteredEvents = [...allEvents];
   displayEvents();
+  updateFilterIndicators();
 }
 
 // Fonction pour afficher les événements

@@ -43,29 +43,69 @@ h1 {
   letter-spacing: 0.5px;
 }
 
-/* Logo styling */
+/* Logo styling - smaller and simpler */
 .logo-container {
   text-align: center;
-  margin: 2.5rem auto 3.5rem;
-  max-width: 450px;
+  margin: 1.5rem auto 2rem;
+  max-width: 200px;
 }
 
 .logo-container img {
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
 
-.logo-container img:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 6px 15px rgba(48, 181, 189, 0.4));
+/* Days pill selector */
+.days-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.8rem;
+  padding: 0.5rem 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
-/* Upgraded filter container */
+.day-pill {
+  background: var(--bg-secondary-color);
+  color: var(--muted-text);
+  border: 1px solid rgba(48, 181, 189, 0.2);
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  min-width: 80px;
+}
+
+.day-pill:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.day-pill.active {
+  background: linear-gradient(
+    145deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(48, 181, 189, 0.3);
+}
+
+/* Filter container - not sticky on mobile */
 .filter-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   padding: 1.8rem;
   border-radius: var(--border-radius);
@@ -75,9 +115,10 @@ h1 {
     var(--bg-primary-color)
   );
   box-shadow: var(--card-shadow);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  z-index: 1; /* Lower z-index so it doesn't overlap */
 }
 
 .filter-container::before {
@@ -94,6 +135,13 @@ h1 {
     transparent
   );
   pointer-events: none;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .filter-group {
@@ -198,8 +246,14 @@ button#resetFilters:active {
   width: 100%;
 }
 
+/* Updated card styling with lighter background */
 .card {
-  background: rgba(19, 19, 19, 0.8);
+  background: rgba(
+    25,
+    25,
+    25,
+    0.8
+  ); /* Lighter than the --bg-primary-color (#080808) */
   backdrop-filter: blur(10px);
   border-radius: var(--border-radius);
   padding: 1.8rem;
@@ -214,6 +268,19 @@ button#resetFilters:active {
   width: 100%;
 }
 
+/* Add a subtle gradient to enhance the visual separation */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.15), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .card::before {
   content: "";
   position: absolute;
@@ -223,13 +290,14 @@ button#resetFilters:active {
   height: 0;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   transition: height 0.3s ease;
-  z-index: 0;
+  z-index: 1;
 }
 
 .card:hover {
   transform: translateY(-8px);
   border-left: 4px solid var(--accent-color);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(48, 181, 189, 0.15);
+  background: rgba(30, 30, 30, 0.8); /* Even lighter on hover */
 }
 
 .card:hover::before {
@@ -243,7 +311,7 @@ button#resetFilters:active {
   line-height: 1.4;
   font-weight: 600;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   transition: all 0.3s ease;
 }
 
@@ -260,7 +328,7 @@ button#resetFilters:active {
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .event-date::before {
@@ -275,7 +343,7 @@ button#resetFilters:active {
   flex-grow: 1;
   color: rgba(255, 255, 255, 0.85);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .event-description strong {
@@ -303,7 +371,7 @@ button#resetFilters:active {
   backdrop-filter: blur(5px);
   border: 1px solid rgba(48, 181, 189, 0.2);
   position: relative;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -388,7 +456,7 @@ button#resetFilters:active {
 }
 
 @media (max-width: 992px) {
-  .filter-container {
+  .filter-row {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -406,22 +474,60 @@ button#resetFilters:active {
   }
 }
 
-/* Additional mobile-specific styles for filter container */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
+  body {
+    padding: 0.75rem 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .logo-container {
+    max-width: 160px;
+    margin: 0.75rem auto 1.25rem;
+  }
+
+  /* Days pills for mobile */
+  .days-selector {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+    margin: 0.75rem 0 1.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .days-selector::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .day-pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    min-width: 70px;
+  }
+
+  /* Filter container for mobile */
   .filter-container {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 1.5rem;
+    position: relative; /* Not sticky */
     padding: 1rem;
-    backdrop-filter: blur(10px);
-    background: rgba(8, 8, 8, 0.9);
-    border-bottom: 1px solid rgba(48, 181, 189, 0.2);
+    margin-bottom: 1.5rem;
+    z-index: 1;
+  }
+
+  .filter-row {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .filter-group {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     width: 100%;
   }
 
@@ -446,24 +552,6 @@ button#resetFilters:active {
     width: 100%;
     min-width: unset;
   }
-}
-
-/* Mobile-optimized styles */
-@media (max-width: 768px) {
-  body {
-    padding: 0.75rem 0.5rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    padding: 0 0.5rem;
-  }
-
-  .logo-container {
-    max-width: 240px;
-    margin: 1rem auto 1.5rem;
-  }
 
   /* Mobile card optimization */
   .cards {
@@ -474,6 +562,7 @@ button#resetFilters:active {
 
   .card {
     padding: 0.9rem;
+    background: rgba(25, 25, 25, 0.9);
     border-radius: 10px;
     border-left-width: 3px;
     min-height: auto;
@@ -483,6 +572,7 @@ button#resetFilters:active {
 
   .card:hover {
     transform: translateY(-3px);
+    background: rgba(28, 28, 28, 0.9);
   }
 
   .event-title {
@@ -562,7 +652,7 @@ button#resetFilters:active {
   }
 
   .logo-container {
-    max-width: 200px;
+    max-width: 140px;
   }
 
   .card {
@@ -583,6 +673,53 @@ button#resetFilters:active {
   }
 
   .filter-label {
+    font-size: 0.8rem;
+  }
+
+  .day-pill {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+}
+
+/* Filter indicator */
+.filter-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.active-filter {
+  background: rgba(48, 181, 189, 0.1);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(48, 181, 189, 0.2);
+}
+
+.clear-filter {
+  margin-left: 0.25rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.clear-filter:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+@media (max-width: 380px) {
+  .filter-indicator {
     font-size: 0.8rem;
   }
 }
