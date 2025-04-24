@@ -47,63 +47,29 @@ h1 {
   bottom: 20px;
   right: 20px;
   background: linear-gradient(145deg, #30b5bd, #258f95);
-  color: white;
+  color: #fff;
   border-radius: 50%;
-  width: 46px; /* Further reduced from 50px */
-  height: 46px; /* Further reduced from 50px */
+  width: 60px; /* Matching WhatsApp icon size */
+  height: 60px; /* Matching WhatsApp icon size */
   display: none;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(48, 181, 189, 0.4),
-    0 0 0 2px rgba(48, 181, 189, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(255, 255, 255, 0.8); /* Thinner border */
-  overflow: hidden;
-}
-
-.itzenata-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.2) 0%,
-    transparent 60%
-  );
-  opacity: 0.8;
-  z-index: -1;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .itzenata-link:hover {
-  transform: scale(1.12) translateY(-5px);
-  box-shadow: 0 8px 20px rgba(48, 181, 189, 0.5),
-    0 0 0 2px rgba(48, 181, 189, 0.2);
-}
-
-.itzenata-link:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 8px rgba(48, 181, 189, 0.3),
-    0 0 0 1px rgba(48, 181, 189, 0.1);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(48, 181, 189, 0.8);
 }
 
 .itzenata-link img {
-  width: 40px; /* Further increased from 38px */
-  height: 40px; /* Further increased from 38px */
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2)) brightness(1.05);
-  transform: translateZ(0);
-  transition: all 0.3s ease;
+  width: 30px;
+  height: 30px;
 }
 
-.itzenata-link:hover img {
-  transform: scale(1.1);
-  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3)) brightness(1.1);
-}
-
-/* Logo styling - smaller and simpler */
 .logo-container {
   text-align: center;
   margin: 1.5rem auto 2rem;
@@ -548,15 +514,15 @@ button#resetFilters:active {
 
   .itzenata-link {
     display: flex;
-    width: 44px; /* Further reduced from 48px */
-    height: 44px; /* Further reduced from 48px */
+    width: 60px;
+    height: 60px;
     right: 15px;
     bottom: 15px;
   }
 
   .itzenata-link img {
-    width: 38px; /* Further increased from 36px */
-    height: 38px; /* Further increased from 36px */
+    width: 30px;
+    height: 30px;
   }
 
   .logo-container {
