@@ -1,1 +1,24 @@
-this is test json file
+```json
+{
+  "orange-internet-coupure-maroc": {
+    "title": "Perturbation du réseau Orange : Une coupure internet majeure au Maroc",
+    "content": "Les abonnés d'Orange Maroc ont fait face à une importante panne d'internet hier, affectant plusieurs régions du royaume. Cette coupure, qui a débuté aux alentours de 14h, a provoqué de nombreuses perturbations pour les particuliers et les entreprises. Les services mobiles 4G et les connexions fibre optique ont été particulièrement touchés, laissant des milliers d'utilisateurs sans accès au réseau.\n\nSelon un communiqué officiel d'Orange Maroc, cette interruption serait due à une défaillance technique sur l'un des principaux centres de données de l'opérateur. Les équipes techniques ont été mobilisées en urgence pour résoudre le problème. \"Nous présentons nos sincères excuses pour les désagréments occasionnés et travaillons sans relâche pour rétablir l'ensemble des services dans les plus brefs délais\", a déclaré l'opérateur.\n\nCette panne intervient dans un contexte où le télétravail et les services numériques sont devenus essentiels pour de nombreux Marocains. Sur les réseaux sociaux, accessibles via d'autres opérateurs, les abonnés Orange ont exprimé leur mécontentement face à cette situation et au manque d'informations précises sur la durée estimée de la panne.\n\nVers 21h, Orange Maroc a annoncé un rétablissement progressif des services, précisant que certaines zones pourraient encore rencontrer des difficultés jusqu'à la résolution complète du problème. L'opérateur a également indiqué qu'une compensation serait proposée aux abonnés affectés par cette coupure.\n\nCet incident soulève des questions sur la résilience des infrastructures de télécommunication au Maroc et la nécessité d'investissements supplémentaires pour garantir la continuité des services internet, devenus indispensables à l'économie nationale.",
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "description": "Une importante coupure du réseau internet d'Orange a affecté de nombreux utilisateurs au Maroc hier, perturbant services professionnels et personnels à travers le pays.",
+    "collection": "technologie",
+    "injectedImages": [
+      {
+        "src": "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+        "line": 4,
+        "position": "right"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1563770660941-10ad27e65e82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "line": 12,
+        "position": "left"
+      }
+    ],
+    "dateEcriture": "2023-10-25"
+  }
+}
+```
