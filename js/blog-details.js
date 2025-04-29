@@ -104,27 +104,50 @@ function scrollCollectionsRight() {
   collectionContainer.scrollBy({ left: 200, behavior: "smooth" });
 }
 
+// Function to load and merge multiple JSON files
+async function loadAllBlogData() {
+  try {
+    // Fetch main blog data
+    const blogsResponse = await fetch("data/blogsData.json");
+    const blogsData = await blogsResponse.json();
+    
+    // Fetch AI blog data
+    const aiResponse = await fetch("data/ai.json");
+    const aiData = await aiResponse.json();
+    
+    // Merge the data objects
+    const allBlogs = { ...blogsData, ...aiData };
+    
+    return allBlogs;
+  } catch (error) {
+    console.error("Error loading blog data:", error);
+    // If there's an error with the AI data, still try to return the main blog data
+    const blogsResponse = await fetch("data/blogsData.json");
+    return await blogsResponse.json();
+  }
+}
+
 // Fetch blog data and initialize the page
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("data/blogsData.json")
-    .then((response) => response.json())
-    .then((blogs) => {
-      loadCollectionButtons(blogs);
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const blogs = await loadAllBlogData();
+    loadCollectionButtons(blogs);
 
-      // Get the blog ID from the URL parameters
-      const blogId = new URLSearchParams(window.location.search).get("id");
+    // Get the blog ID from the URL parameters
+    const blogId = new URLSearchParams(window.location.search).get("id");
 
-      // Display the blog if the ID is valid, otherwise load a default blog
-      if (blogId && blogs[blogId]) {
-        displayBlogContent(
-          blogs[blogId],
-          blogId,
-          blogs[blogId].collection,
-          blogs
-        );
-      }
-    })
-    .catch((error) => console.error("Error loading blog data:", error));
+    // Display the blog if the ID is valid, otherwise load a default blog
+    if (blogId && blogs[blogId]) {
+      displayBlogContent(
+        blogs[blogId],
+        blogId,
+        blogs[blogId].collection,
+        blogs
+      );
+    }
+  } catch (error) {
+    console.error("Error initializing the page:", error);
+  }
 });
 
 // Selecting the menu toggle button and the menu itself
@@ -155,25 +178,27 @@ function injectImagesInContent(content, injectedImages) {
   const lines = content.split(/\r?\n/);
 
   // Inject images based on their specified line and position
-  injectedImages.forEach((image) => {
-    const lineIndex = image.line - 1; // Adjust to 0-indexed
+  if (injectedImages && Array.isArray(injectedImages)) {
+    injectedImages.forEach((image) => {
+      const lineIndex = image.line - 1; // Adjust to 0-indexed
 
-    if (lineIndex < lines.length) {
-      // Create image HTML element
-      const imageHTML = `<img src="${image.src}" alt="Blog image" class="injected-image-${image.position}">`;
+      if (lineIndex < lines.length) {
+        // Create image HTML element
+        const imageHTML = `<img src="${image.src}" alt="Blog image" class="injected-image-${image.position}">`;
 
-      // Inject image at specified position: left or right
-      if (image.position === "left") {
-        lines[lineIndex] =
-          `<div style="float: left; margin-right: 10px;">${imageHTML}</div>` +
-          lines[lineIndex];
-      } else if (image.position === "right") {
-        lines[lineIndex] =
-          lines[lineIndex] +
-          `<div style="float: right; margin-left: 10px;">${imageHTML}</div>`;
+        // Inject image at specified position: left or right
+        if (image.position === "left") {
+          lines[lineIndex] =
+            `<div style="float: left; margin-right: 10px;">${imageHTML}</div>` +
+            lines[lineIndex];
+        } else if (image.position === "right") {
+          lines[lineIndex] =
+            lines[lineIndex] +
+            `<div style="float: right; margin-left: 10px;">${imageHTML}</div>`;
+        }
       }
-    }
-  });
+    });
+  }
 
   // Join the lines back together
   return lines.join("<br>"); // Use <br> to preserve line breaks in HTML
