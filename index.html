@@ -115,15 +115,12 @@ Explorez la croissance de la création de sites web au Maroc, découvrez les tec
 </p>
 </a>
 </div>
-<div class=blog-box>
-<a href="blog-detail.html?id=devops">
-<img src=./assets/images/blogs/DevOps.avif alt=DevOps>
-<h1 style=color:#fff>DevOps et Logiciel</h1>
-<p style=color:#fff>
-EDécouvrez comment DevOps rapproche le développement et les opérations, favorisant la collaboration, accélérant la livraison des logiciels, et améliorant l'efficacité dans un paysage numérique en constante évolution.
-</p>
-</a>
-</div>
+
+<!-- Remplacer le div statique par une version dynamique -->
+<!-- Conteneur pour les blogs qui seront chargés dynamiquement -->
+<div id="dynamic-blogs-container"></div>
+
+
 <div class=blog-box>
 <a href="blog-detail.html?id=gitex-africa">
 <img src=./assets/images/blogs/Gitex-africa.png alt=E-commerce>
@@ -196,4 +193,5 @@ Engagés envers l'excellence, IT ZENATA est votre partenaire de confiance pour t
 </body>
 <script defer>const myWhatsappLink=document.querySelector(".whatsapp-link"),contactUsLink=document.querySelector(".contactUsLink");myWhatsappLink&&myWhatsappLink.addEventListener("click",(function(){gtag("event","conversion",{send_to:"AW-829106022/8qT3CKecgdIZEObOrIsD",value:1,currency:"MAD"})})),contactUsLink&&contactUsLink.addEventListener("click",(function(){gtag("event","conversion",{send_to:"AW-829106022/8qT3CKecgdIZEObOrIsD",value:.5,currency:"MAD"})}))</script>
 <script src=js/main.js defer></script>
+<script src=js/dynamic-blog.js defer> </script>
 </html>
