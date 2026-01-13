@@ -1,4 +1,3 @@
-
 /* Header Styles */
 .site-header {
   position: fixed;
@@ -15,10 +14,8 @@
   height: 100px;
 }
 
-
 /* Basic styles for the navigation bar */
-.main.conta
-.main-navigation {
+.main.conta .main-navigation {
   display: flex;
   justify-content: space-between; /* Space out the menu items */
   align-items: center; /* Center items vertically */
@@ -26,7 +23,6 @@
   background-color: var(--background-color); /* Adjust for your design */
   position: relative;
 }
-
 
 /* Basic styles for the navigation links */
 .main-navigation a {
@@ -37,37 +33,35 @@
   margin-left: 4rem; /* Space between links */
   text-decoration: none; /* Remove underline */
   transition: 0.3s ease;
-  
 }
 
 /* Hover and active states */
 .main-navigation a:hover,
 .main-navigation a.active {
   color: var(--primary-color);
-  
 }
 
 /* The menu icon for mobile view */
 #menu-icon {
-  font-size: 3.6rem;
+  font-size: 1rem;
   color: var(--primary-color);
   display: none; /* Hidden on larger screens */
   cursor: pointer;
   position: absolute;
   right: 20px; /* Align to the right */
-  top: 20px;   /* Position under the navbar */
+  top: 20px; /* Position under the navbar */
 }
 
 /* Mobile view: layout changes for small screens */
 @media (max-width: 768px) {
-  .blog-page-logo{
+  .blog-page-logo {
     width: 10px;
     height: auto;
   }
- 
+
   /* Use fixed pixel size on small screens for consistent navbar layout */
-  .site-header img{
-    width: 80px; /* Header logo on small screens */
+  .site-header img {
+    width: 64px; /* Header logo on small screens (reduced) */
     height: auto; /* Maintain aspect ratio */
   }
   /* Show menu icon */
@@ -81,29 +75,21 @@
     background-color: black;
     padding: 0;
     margin-right: 4%;
-    
   }
-  
 
   /* Hide navigation links by default */
   .main-navigation a {
     display: none; /* Hide links on small screens */
     text-align: center;
-   
-   
-    
-   
   }
 
   /* Show the links when 'show-menu' is active */
   .show-menu a {
     display: block; /* Display links vertically on mobile */
     text-align: center;
-    padding: 7px ; /* Adjust padding for mobile view */
+    padding: 7px; /* Adjust padding for mobile view */
     margin-right: 10px;
     margin-left: 10px;
-    
-    
   }
 
   /* Stack the menu icon and navigation vertically */
@@ -118,15 +104,14 @@
 
   .show-menu .main-navigation {
     flex-direction: column;
-    
   }
 }
 
 /* Display the navigation normally on larger screens */
 @media (min-width: 769px) {
   /* Use a fixed pixel width so the header logo doesn't grow too tall */
-  .site-header img{
-    width: 140px; /* Header logo on desktop */
+  .site-header img {
+    width: 120px; /* Header logo on desktop (reduced) */
     height: auto; /* Maintain aspect ratio */
     filter: brightness(1.2) contrast(1.1);
   }
@@ -148,13 +133,13 @@
 /* WhatsApp icon positioned under the navbar *
 
     /* Animation for the link effect */
-    @keyframes linkAnimation {
-      from {
-          transform: translateY(-20px); /* Start position */
-          opacity: 0;                   /* Start hidden */
-      }
-      to {
-          transform: translateY(0);      /* End position */
-          opacity: 1;                    /* Fully visible */
-      }
-    }
+@keyframes linkAnimation {
+  from {
+    transform: translateY(-20px); /* Start position */
+    opacity: 0; /* Start hidden */
+  }
+  to {
+    transform: translateY(0); /* End position */
+    opacity: 1; /* Fully visible */
+  }
+}
