@@ -654,12 +654,19 @@ body {
     margin-bottom: 2rem;
     text-align: center;
   }
-  .footer img {
-    width: 100px;
-    height: 10%;
+  /* Footer logo: larger and responsive */
+  .footer .footer-logo-img {
+    width: 160px;
+    height: auto;
     cursor: pointer;
     display: block;
     object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  /* Smaller footer logo on small screens */
+  @media (max-width: 768px) {
+    .footer .footer-logo-img { width: 120px; }
   }
   .footer-social a {
     font-size: 2.5rem;

@@ -65,8 +65,9 @@
     height: auto;
   }
  
+  /* Use fixed pixel size on small screens for consistent navbar layout */
   .site-header img{
-    width: 20vw; /* Increase size for larger screens */
+    width: 80px; /* Header logo on small screens */
     height: auto; /* Maintain aspect ratio */
   }
   /* Show menu icon */
@@ -123,8 +124,9 @@
 
 /* Display the navigation normally on larger screens */
 @media (min-width: 769px) {
+  /* Use a fixed pixel width so the header logo doesn't grow too tall */
   .site-header img{
-    width: 10vw; /* Increase size for larger screens */
+    width: 140px; /* Header logo on desktop */
     height: auto; /* Maintain aspect ratio */
     filter: brightness(1.2) contrast(1.1);
   }
